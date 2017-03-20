@@ -1,0 +1,35 @@
+bottom-bar {
+    .stats{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .bottomStats{
+        font-family: Escargot;
+        flex-grow: 1;
+        height: 7vw;
+        font-size: 150%;
+        img{
+            width: none;
+        }
+    }
+
+    .chapterFooter{
+    width: 100vw;
+    height: 12vh;
+    background: url(../img/pageReady/bottom.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+    text-align: center;
+    p {
+        font-size: 6vw;
+    }
+    }
+}

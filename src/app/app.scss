@@ -1,0 +1,136 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@font-face {
+  font-family: 'Escargot';
+  src: url('../assets/fonts/eskargot-webfont.woff2') format('woff2'), url('../assets/fonts/eskargot-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+     background: url(../img/pageReady/bg.jpg) no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     background-size: cover;
+ }
+/*MAKES PAGE TRANSPARENT SO IT CAN SHOW HTML BG*/
+ion-app.md {
+    background-color: transparent !important;
+}
+
+.content-md {
+    background-color: transparent !important;
+}
+
+.chapterHeader{
+    width: 100vw;
+    height: 14vh;
+    background: url(../img/pageReady/top.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    p {
+        font-size: 6vw;
+    }
+}
+
+.scroll-content p:first-child {
+    margin-top: 8vh;
+}
+
+.topRightMenu {
+    background: url(../img/icoChar.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background: url(../img/icoChar.png) no-repeat;
+    margin: 0;
+    width: 17vw;
+    height: 14vh;
+    position: absolute;
+    right: 3vw;
+    top: 0;
+}
+
+.choiceDiv{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.choiceDiv:before {
+    content: '';
+    background-position: right top;
+    background-image: url(../img/dxup.jpg);
+    height: 35px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 4vh;
+}
+.choiceButton{
+  width: 73vw;
+  border-radius: 1vw;
+  background: seagreen;
+  border: saddlebrown solid;
+  border-style: double;
+  box-shadow: inset 0px 0px 25px 2px black;
+  padding: 4vw;
+    margin-top: -25px;
+    margin-bottom: 2vh;
+}
+
+.statsText{
+    font-family: Escargot;
+    font-size: 140%;
+    padding: 0;
+    margin: 1vw;
+    margin-top: 0 !important;
+}
+.bold {
+    font-weight: bold;
+}
+
+/* ALERT GENERAL  */
+.alert-md .alert-wrapper {
+    border-radius: 8px;
+    background-color: #484038;
+}
+
+.alert-md .alert-button-group {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #211b14;
+}
+.alert-md .alert-button .button-inner {
+    letter-spacing: 3px;
+}
+.alert-md .alert-message {
+    color: white;
+}
+
+/* BACK BUTTON ************/
+.backButton{
+    width: 25vw;
+    height: 25vw;
+    background-color: red;
+}

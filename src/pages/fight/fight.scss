@@ -1,0 +1,61 @@
+page-fight {
+    .writing_fightPage{
+        width: 45vw;
+    }
+    .character{
+        display: flex;
+        flex-direction: row;
+        height: 40vh;
+    }
+    .characterImgContainer_fightPage{
+        width: 55vw;
+        height: 35vh;
+        display: flex;
+        align-items: center;
+    }
+    .characterImg_fightPage{
+        //width: 55vw;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+    }
+    .enemy {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        height: 40vh;
+    }
+    .enemyImgContainer_fightPage{
+        width: 65vw;
+        height: 35vh;
+        display: flex;
+        align-items: center;
+    }
+    .enemyImg_fightPage{
+        //width: 55vw;
+        height: 40vh;
+    }
+
+    .fightButton{
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fight {
+        background-color: red;
+        height: 5vh;
+        padding: 7vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .statsText{
+        font-family: Escargot;
+        font-size: 150%;
+    }
+
+
+
+
+}

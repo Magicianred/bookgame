@@ -1,0 +1,21 @@
+page-home {
+
+.homeButton {
+    width: 40vw;
+    height: 8vh;
+    background-color: #184f45;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    margin-bottom: 3vh;
+}
+.fixedRight {
+    right: 0;
+    }
+.fixedLeft {
+    left: 0;
+}
+
+}

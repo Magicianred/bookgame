@@ -1,0 +1,25 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+
+<ion-content padding>
+  <h1>{{title}}</h1>
+<ion-fab left middle class="fixedLeft">
+    <div class="homeButton fixedLeft" (click)='start()'>Start</div>
+    <div class="homeButton fixedLeft" (click)='goToPage(creditsPage)'>Credits</div>
+    <div class="homeButton fixedLeft" (click)='goToFightPage(2 , 3, "wolf")'>Fight</div>
+</ion-fab>
+<ion-fab right middle class="fixedRight">
+    <div class="homeButton fixedRight" (click)='load()'>Load</div>
+    <div class="homeButton fixedRight" (click)='goToPage(rulesPage)'>Rules</div>
+</ion-fab>
+ 
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)='goToPageWithParam(cap1Page, 12, 5, 0, 0 )'><ion-icon name="arrow-dropright"></ion-icon></button>
+  </ion-fab>
+</ion-content>
