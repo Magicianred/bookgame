@@ -16,13 +16,13 @@ import { CharacterPage } from '../character/character';
   templateUrl: 'cap1.html'
 })
 export class Cap1Page {
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {
-    this.storage.set('chapter', 1);     //SET CHAPTER VALUE
-  }
+  chapter: number = 1;                  //FOR TITLE
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Cap1Page ');
+    this.storage.set('chapter', this.chapter);     //SAVE CHAPTER VALUE
   }
 
   goToCharacterPage() {

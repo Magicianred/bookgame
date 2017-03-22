@@ -1,18 +1,8 @@
-<!--
-  Generated template for the Cap1 page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-<div class="chapterHeader">
-  <div class="settings"></div>
-  <p>Capitolo 1</p>
-  <div (click)='goToCharacterPage()' class="topRightMenu"></div>
-</div>
-
+<top-bar [chapNum]='chapter'></top-bar>
 
 <ion-content padding>
+  <p>TEST</p>
+  <p>{{chapter}}</p>
   <p>Da almeno due mesi, da quando il Duca ha ufficialmente concesso la mano di sua figlia, in città non si parla d'altro.</p>
   <p>Ad ogni bancarella del mercato di sente qualcuno parlare della giostra o dei giochi, dei cavalieri in armatura scintillante che sfileranno in parata
      tra le vie della città delle carovane di mercanti che arriveranno a seguito dello sposo, dal suo paese, portando spezie e profumi di terre lontane, 

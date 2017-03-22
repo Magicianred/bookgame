@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, Inject, forwardRef } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { MySettings } from '../../app/mySettings';
+import { BookNavigation } from '../../providers/book-navigation';
 
 import { ChooseCharacterPage } from '../choose-character/choose-character';
 import { Cap1Page } from '../cap1/cap1';
@@ -24,13 +25,18 @@ export class HomePage {
   public cap1Page: any = Cap1Page;
   public fightPage: any = FightPage;
 
+  //public BookNavigation: any = BookNavigation;
+
   title = MySettings.TITLE;
+  //chapters = MySettings.CHAPTERS;
 
-  public chapters = MySettings.CHAPTERS;
-
-  constructor(public navCtrl: NavController, public storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+              //public bookNavigation:BookNavigation,
+              //@Inject(forwardRef(() => BookNavigation)) bookNavigation : BookNavigation,
+              public storage:Storage) {
     
   }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChooseCharacterPage');
@@ -47,12 +53,12 @@ export class HomePage {
             console.log('chapter ', val);
           }));
   }
-  
+  /*
   //COMMON FUNCTIONS
   goToPage(namePage: any){
       this.navCtrl.push(namePage);
   }
-
+*/
   goToPageWithParam(namePage: any, paramsValues: Array<Number>) {
       this.navCtrl.push(namePage, {
         life: paramsValues[0],
@@ -81,7 +87,6 @@ export class HomePage {
       this.storage.set('table', 0);       //TABLE
 
       //GAME VARIABLES (necklace, biscuit)
-
       var test = this.storage.get('life');
       return test
   }
@@ -92,13 +97,8 @@ export class HomePage {
       this.navCtrl.push(ChooseCharacterPage);
     });
    }
-/*
-   calculatePage(chapterValue) {
-     var chapter: string = "cap"+chapterValue+"Page";
-     return chapter
-   }*/
 
-    load() {
+goToLastChapter() {
         Promise.all([
         this.storage.get('life'),
         this.storage.get('attack'),
@@ -109,16 +109,20 @@ export class HomePage {
           var posArray :number = value[4] - 1;  //POSITION OF THE COMPONENT IN THE ARRAY
           console.log("life "+value[0]);
           //console.log("chapter "+chapter);
-          this.navCtrl.push(this.chapters[posArray], {
+          this.navCtrl.push(MySettings.CHAPTERS[posArray], {
             life: value[0],
             attack: value[1],
             money: value [2],
             reputation: value[3]
           });
         });
-      }
+      } 
 
-      goToFightPage(enemyAttackValue: number, enemyLifeValue: number, enemySrc: string){
+  goToPage(namePage: any){
+     this.navCtrl.push(namePage);
+  }
+
+  goToFightPage(enemyAttackValue: number, enemyLifeValue: number, enemySrc: string){
         Promise.all([
         this.storage.get('life'),
         this.storage.get('attack'),
@@ -134,7 +138,11 @@ export class HomePage {
             //loseChapter: loseChapter,
           });
         });
-      }
+  }
+
+
+
+
 
 
 }

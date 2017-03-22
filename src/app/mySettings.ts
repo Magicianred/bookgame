@@ -24,8 +24,27 @@ export class MySettings {
         //Cap11Page, Cap12Page, Cap13Page, Cap14Page, Cap15Page, Cap16Page, Cap17Page, Cap18Page, Cap19Page, cap20Page,
     ]
 
-    constructor (public storage:Storage) {}
+    constructor (public storage:Storage, public navCtrl: NavController, public navParams:NavParams) {}
 
+    goToLastChapter() {
+        Promise.all([
+        this.storage.get('life'),
+        this.storage.get('attack'),
+        this.storage.get('money'),
+        this.storage.get('reputation'),
+        this.storage.get('chapter'),
+        ]).then((value) => {
+          var posArray :number = value[4] - 1;  //POSITION OF THE COMPONENT IN THE ARRAY
+          console.log("life "+value[0]);
+          //console.log("chapter "+chapter);
+          this.navCtrl.push(MySettings.CHAPTERS[posArray], {
+            life: value[0],
+            attack: value[1],
+            money: value [2],
+            reputation: value[3]
+          });
+        });
+      } 
 
 
 }

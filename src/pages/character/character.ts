@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, forwardRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { BookNavigation } from '../../providers/book-navigation';
@@ -26,8 +26,10 @@ export class CharacterPage {
   public track: any;
   public talk: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private bookNavigation: BookNavigation) {
-    this.life = navParams.get('life');
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+              @Inject(forwardRef(() => BookNavigation)) bookNavigation,
+              ) {
+    this.life = navParams.get('life'); 
     this.attack = navParams.get('attack');
     this.money = navParams.get('money');
     this.reputation = navParams.get('reputation');
@@ -35,16 +37,18 @@ export class CharacterPage {
     this.hide = navParams.get('hide');
     this.track = navParams.get('track');
     this.talk = navParams.get('talk');
+    bookNavigation.goToLastChapter();
   }
 
-  load() {
-    this.bookNavigation.goToLastChapter();
-  }
+/*
+  load(bookNavigation) {
+    bookNavigation.goToLastChapter();
+  }*/
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CharacterPage');
   }
-
+/*
   goToInventary(){
     this.navCtrl.push(InventoryPage);
   }
@@ -52,5 +56,5 @@ export class CharacterPage {
   goToLair(){
     this.navCtrl.push(LairPage);
   }
-
+*/
 }

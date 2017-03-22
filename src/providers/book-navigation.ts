@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
+import { CharacterPage } from '../pages/character/character';
+import { FightPage } from '../pages/fight/fight';
 import { Cap1Page } from '../pages/cap1/cap1';
 import { Cap2Page } from '../pages/cap2/cap2';
 import { Cap3Page } from '../pages/cap3/cap3';
@@ -20,7 +20,7 @@ export class BookNavigation {
     ]
 
 
-  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {
     console.log('Hello BookNavigation Provider');
   }
 
@@ -43,6 +43,41 @@ export class BookNavigation {
           });
         });
       } 
+
+  goToPage(namePage: any){
+     this.navCtrl.push(namePage);
+  }
+
+  goToPageWithParam(namePage: any, paramsValues: Array<Number>) {
+      this.navCtrl.push(namePage, {
+        life: paramsValues[0],
+        attack: paramsValues[1],
+        money: paramsValues [2],
+        reputation: paramsValues[3]
+      });
+  }
+
+  goToFightPage(enemyAttackValue: number, enemyLifeValue: number, enemySrc: string){
+        Promise.all([
+        this.storage.get('life'),
+        this.storage.get('attack'),
+        ]).then((value) => {
+          console.log(this.storage.get('life'))
+          this.navCtrl.push(FightPage,{
+            characterLife: value[0],
+            characterAttack: value[1],
+            enemyAttack: enemyAttackValue,
+            enemyLife: enemyLifeValue,
+            enemySrc: enemySrc,
+            //winChapter: winChapter,
+            //loseChapter: loseChapter,
+          });
+        });
+  }
+
+  goToCharacterPage() {
+    this.navCtrl.push(CharacterPage);
+  }
 
 
 }
