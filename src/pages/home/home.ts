@@ -1,9 +1,9 @@
-import { Component, Inject, forwardRef } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { MySettings } from '../../app/mySettings';
-import { BookNavigation } from '../../providers/book-navigation';
+import { BookNavigation } from '../../app/bookNavigation';
 
 import { ChooseCharacterPage } from '../choose-character/choose-character';
 import { Cap1Page } from '../cap1/cap1';
@@ -25,17 +25,10 @@ export class HomePage {
   public cap1Page: any = Cap1Page;
   public fightPage: any = FightPage;
 
-  //public BookNavigation: any = BookNavigation;
-
   title = MySettings.TITLE;
   //chapters = MySettings.CHAPTERS;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-              //public bookNavigation:BookNavigation,
-              //@Inject(forwardRef(() => BookNavigation)) bookNavigation : BookNavigation,
-              public storage:Storage) {
-    
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {}
   
 
   ionViewDidLoad() {

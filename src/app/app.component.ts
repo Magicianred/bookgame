@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { BookNavigation } from '../providers/book-navigation';
+import { RetrieveSql } from '../providers/retrieve-sql';
+import { GameData } from '../providers/game-data';
 
 import { HomePage } from '../pages/home/home';
 
 
 @Component({
   templateUrl: 'app.html',
-  providers: [BookNavigation]
+  providers: [RetrieveSql, GameData]
 })
 export class MyApp {
   rootPage = HomePage;

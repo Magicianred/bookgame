@@ -1,10 +1,11 @@
-import { Component, Inject, forwardRef } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
-import { BookNavigation } from '../../providers/book-navigation';
+import { GameData } from '../../providers/game-data';
 
-import { InventoryPage } from '../inventory/inventory';
-import { LairPage } from '../lair/lair';
+//import { InventoryPage } from '../inventory/inventory';
+//import { LairPage } from '../lair/lair';
 
 
 
@@ -26,18 +27,15 @@ export class CharacterPage {
   public track: any;
   public talk: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-              @Inject(forwardRef(() => BookNavigation)) bookNavigation,
-              ) {
-    this.life = navParams.get('life'); 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage, public gameData:GameData) {
+    /*this.life = navParams.get('life'); 
     this.attack = navParams.get('attack');
     this.money = navParams.get('money');
     this.reputation = navParams.get('reputation');
     this.swim = navParams.get('swim');
     this.hide = navParams.get('hide');
     this.track = navParams.get('track');
-    this.talk = navParams.get('talk');
-    bookNavigation.goToLastChapter();
+    this.talk = navParams.get('talk');*/
   }
 
 /*
@@ -45,16 +43,25 @@ export class CharacterPage {
     bookNavigation.goToLastChapter();
   }*/
 
+
+  ionViewWillEnter() {/*
+      this.life = this.storage.get('life'),
+      this.attack = this.storage.get('attack'),
+      this.money= this.storage.get('money'),
+      this.reputation = this.storage.get('reputation'),
+      this.swim = this.storage.get('swim'),
+      this.hide = this.storage.get('hide'),
+      this.track = this.storage.get('track'),
+      this.talk = this.storage.get('talk')*/
+    }
+
+
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CharacterPage');
-  }
-/*
-  goToInventary(){
-    this.navCtrl.push(InventoryPage);
+    // console.log('life '+this.life);
+    this.gameData.getJsonData();
   }
 
-  goToLair(){
-    this.navCtrl.push(LairPage);
-  }
-*/
 }

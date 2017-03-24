@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
 import { MySettings } from '../../app/mySettings';
+import { BookNavigation } from '../../app/bookNavigation';
 
 @Component({
   selector: 'page-fight',

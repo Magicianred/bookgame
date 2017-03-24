@@ -8,7 +8,9 @@ import { BottomBarComponent } from '../components/bottom-bar/bottom-bar';
 import { TopBarComponent } from '../components/top-bar/top-bar';
 
 import { MySettings } from './mySettings';
-import { BookNavigation } from '../providers/book-navigation';
+import { BookNavigation } from '../bookNavigation';
+import { RetrieveSql } from '../providers/retrieve-sql';
+import { GameData } from '../providers/game-data';
 
 import { HomePage } from '../pages/home/home';
 import { CreditsPage } from '../pages/credits/credits';
@@ -59,8 +61,9 @@ import { LairPage } from '../pages/lair/lair';
     provide: ErrorHandler, 
     useClass: IonicErrorHandler,
     },
-    Storage, 
-    BookNavigation,
+    Storage,
+    RetrieveSql,
+    GameData,
     ]
 })
 export class AppModule {}

@@ -1,0 +1,37 @@
+/* ricordarsi di togliere la virgola all'ultima voce ***************/
+{   "gameName":"Shai",
+    "story": {
+                "1": {
+                        "text": "this is a text",
+                        "choice1":"text for choice 1", 
+                        "goTo1" : 1,
+                        "choice2":"text for choice 2",
+                        "goTo2" : 2,
+                        "choice3":"text for choice 3",
+                        "goTo3" : 3
+                },
+                "2": {
+                        "text": "this is a text",
+                        "choice1":"text for choice 1", 
+                        "goTo1" : 1,
+                        "choice2":"text for choice 2",
+                        "goTo2" : 2,
+                        "choice3":"text for choice 3",
+                        "goTo3" : 3
+                },
+                "3": {
+                        "text": "this is a text",
+                        "choice1":"text for choice 1", 
+                        "goTo1" : 1,
+                        "choice2":"text for choice 2",
+                        "goTo2" : 2,
+                        "choice3":"text for choice 3",
+                        "goTo3" : 3
+                }
+    },
+    "game": {
+        "lair": false,
+        "necklace": false
+    },
+    "characterFeatures": ["life", "attack", "money", "reputation" ]
+}

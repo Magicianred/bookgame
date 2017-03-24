@@ -128,6 +128,11 @@ ion-app.md {
     color: white;
 }
 
+/* CHAPTER PAGES *************/
+.textChapter p:first-child {
+    margin-top:22vw;                    //TOP MENU 20vw
+}
+
 /* BACK BUTTON ************/
 .backButton{
     width: 25vw;
