@@ -1,27 +1,15 @@
 <top-bar [chapNum]='chapter'></top-bar>
 
 <ion-content padding class="textChapter">
-  <p>Da almeno due mesi, da quando il Duca ha ufficialmente concesso la mano di sua figlia, in città non si parla d'altro.</p>
-  <p>Ad ogni bancarella del mercato di sente qualcuno parlare della giostra o dei giochi, dei cavalieri in armatura scintillante che sfileranno in parata
-     tra le vie della città delle carovane di mercanti che arriveranno a seguito dello sposo, dal suo paese, portando spezie e profumi di terre lontane, 
-     stoffe e colori di altre casate, e storie e racconti di nuovi eroi mai sentite prima.</p>
-  <p>E poi, naturalmente, si parla del vestito che la sposa indosserà, un vestito che ha l'arduo compito di innalzare un popolo e una cultura per non farla 
-    sfigurare di fronte alla leggendaria belezza e maestria del popolo dello sposo.</p> 
-  <p>Il compito di realizzarlo è ricaduto su te, l'unica sarta la cui bravura supera di gran lunga le mura della città. Dicono, di te, che la tua arte
-    possa cmopetere con quella degli elfi, che i tuoi vestiti rubino la luce delle stelle e che trasformino dei semplici uomini in semidei di immortale 
-    bellezza. Ovviamente esagerano.</p>
-  <p>Tu cerchi di minimizzare, con modestia, ogni volta che ti complimentano ma sai anche che quei complimenti sono meritati. Il tuo lavoro è veramente 
-    di ottima fattura, e anche se non credi possa essere paragonato alla maestria elfica di sicuro lo puoi almeno definire prova di un buon artigianato.</p>
-  <p>"Sara!" Riconosci la voce che ti chiama, è tua madre. Cerchi di ignorarla ma la voce, insistente, urla più forte il tuo nome. "Sara!"</p>
-  <p>Tua madre è caparbia, e vuole qualcosa da te seminarla non sarà facile, ma a pochi metri intravedi le prime bancarelle del mercato e forse lì avrai 
-    una speranza di perderti tra la folla.</p>
-  <div class="choiceDiv">
-    <button class="choiceButton" (click)='goToPage(home)'>Ti getti nella folla del mercato sperando di far perdere le tue tracce</button>
-  </div>
-  <div class="choiceDiv">
-    <button class="choiceButton" (click)='goToPage(chooseCharacter)'> Ti fermi e aspetti che tua madre ti raggiunga</button>
-  </div>
+  
+  <p>{{this.gameData.text}}</p>
+
+  <choices [chapNum]='chapter'></choices>
+
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)='goToPage(cap2)'><ion-icon name="arrow-dropright"></ion-icon></button>
+  </ion-fab>
 
 </ion-content>
-
-<bottom-bar></bottom-bar>
+<!--
+<bottom-bar></bottom-bar>-->

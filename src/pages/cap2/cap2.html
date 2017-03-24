@@ -1,18 +1,15 @@
-<!--
-  Generated template for the Cap2 page.
+<top-bar [chapNum]='chapter'></top-bar>
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+<ion-content padding class="textChapter">
+  
+  <p>{{this.gameData.text}}</p>
 
-  <ion-navbar>
-    <ion-title>cap2</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
+  <choices [chapNum]='chapter'></choices>
+  
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)='goToPage(cap2)'><ion-icon name="arrow-dropright"></ion-icon></button>
+  </ion-fab>
 
 </ion-content>
+
+<bottom-bar></bottom-bar>

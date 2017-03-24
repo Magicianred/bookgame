@@ -61,7 +61,7 @@ export class CharacterPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CharacterPage');
     // console.log('life '+this.life);
-    this.gameData.getJsonData();
+    this.gameData.getJsonData(1);
   }
 
 }

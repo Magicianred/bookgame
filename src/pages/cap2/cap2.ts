@@ -2,24 +2,26 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
-/*
-  Generated class for the Cap2 page.
+import { GameData } from '../../providers/game-data';
+import { Choices } from '../component/choices/choices';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-cap2',
   templateUrl: 'cap2.html'
 })
 export class Cap2Page {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {
-    this.storage.set('chapter', 2);     //SET CHAPTER VALUE
+  chapter: number = 2;                  //FOR TITLE
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage, public gameData:GameData) {}
+
+  ionViewDidLoad(chapter: number) {
+    this.storage.set('chapter', this.chapter);                  //SAVE CHAPTER VALUE
+    this.gameData.getJsonData(this.chapter)
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Cap2Page');
+  goToPage(test: any){
+      this.navCtrl.push(test);
   }
 
 }

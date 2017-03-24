@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 
 import { BottomBarComponent } from '../components/bottom-bar/bottom-bar';
 import { TopBarComponent } from '../components/top-bar/top-bar';
+import { ChoicesComponent } from '../components/choices/choices';
 
 import { MySettings } from './mySettings';
 import { BookNavigation } from '../bookNavigation';
@@ -18,6 +19,7 @@ import { RulesPage } from '../pages/rules/rules';
 import { ChooseCharacterPage } from '../pages/choose-character/choose-character';
 import { ChooseSkillsPage } from '../pages/choose-skills/choose-skills';
 import { Cap1Page } from '../pages/cap1/cap1';
+import { Cap2Page } from '../pages/cap2/cap2';
 import { CharacterPage } from '../pages/character/character';
 //import { FightPage } from '../pages/fight/fight';
 import { InventoryPage } from '../pages/inventory/inventory';
@@ -28,12 +30,14 @@ import { LairPage } from '../pages/lair/lair';
     MyApp,
     BottomBarComponent,
     TopBarComponent,
+    ChoicesComponent,
     HomePage,
     CreditsPage,
     RulesPage,
     ChooseCharacterPage,
     ChooseSkillsPage,
     Cap1Page,
+    Cap2Page,
     CharacterPage,
     //FightPage,
     InventoryPage,
@@ -51,6 +55,7 @@ import { LairPage } from '../pages/lair/lair';
     ChooseCharacterPage,
     ChooseSkillsPage,
     Cap1Page,
+    Cap2Page,
     CharacterPage,
     //FightPage,
     InventoryPage,
