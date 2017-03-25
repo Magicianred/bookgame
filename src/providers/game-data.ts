@@ -13,6 +13,7 @@ export class GameData {
   goTo2: number;
   choice3: string;
   goTo3: number;
+  fight: any;
 
   constructor(public http: Http) {
     console.log('Hello GameData Provider');
@@ -27,7 +28,9 @@ export class GameData {
      this.goTo2 = data["story"][chapter]["goTo2"];
      this.choice3 = data["story"][chapter]["choice3"];
      this.goTo3 = data["story"][chapter]["goTo3"];
-     console.log( this.choice1);
+     this.fight = data["story"][chapter]["fight"];
+     console.log( this.fight);
+     return data;
     });
   }
 

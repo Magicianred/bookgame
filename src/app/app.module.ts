@@ -21,7 +21,7 @@ import { ChooseSkillsPage } from '../pages/choose-skills/choose-skills';
 import { Cap1Page } from '../pages/cap1/cap1';
 import { Cap2Page } from '../pages/cap2/cap2';
 import { CharacterPage } from '../pages/character/character';
-//import { FightPage } from '../pages/fight/fight';
+import { FightPage } from '../pages/fight/fight';
 import { InventoryPage } from '../pages/inventory/inventory';
 import { LairPage } from '../pages/lair/lair';
 
@@ -39,7 +39,7 @@ import { LairPage } from '../pages/lair/lair';
     Cap1Page,
     Cap2Page,
     CharacterPage,
-    //FightPage,
+    FightPage,
     InventoryPage,
     LairPage,
   ],
@@ -57,7 +57,7 @@ import { LairPage } from '../pages/lair/lair';
     Cap1Page,
     Cap2Page,
     CharacterPage,
-    //FightPage,
+    FightPage,
     InventoryPage,
     LairPage,
   ],

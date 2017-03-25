@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
-import { MySettings } from '../../app/mySettings';
-import { BookNavigation } from '../../app/bookNavigation';
+
 
 @Component({
   selector: 'page-fight',
@@ -19,8 +18,6 @@ export class FightPage {
   public winChapter: any;
   public loseChapter: any;
   public enemySrc: any;
-
-  public chapters = MySettings.CHAPTERS;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
     this.characterLife = navParams.get('characterLife');
