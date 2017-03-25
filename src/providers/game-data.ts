@@ -20,7 +20,7 @@ export class GameData {
   }
 
   getJsonData(chapter: number){
-    this.http.get('assets/json/gameData.json').map(res => res.json()).subscribe((data) => {
+     this.http.get('assets/json/gameData.json').map(res => res.json()).subscribe((data) => {
      this.text = data["story"][chapter]["text"];
      this.choice1 = data["story"][chapter]["choice1"];
      this.goTo1 = data["story"][chapter]["goTo1"];
@@ -29,7 +29,6 @@ export class GameData {
      this.choice3 = data["story"][chapter]["choice3"];
      this.goTo3 = data["story"][chapter]["goTo3"];
      this.fight = data["story"][chapter]["fight"];
-     console.log( this.fight);
      return data;
     });
   }

@@ -15,6 +15,9 @@ export class ChoicesComponent {
   public fightPage: any = FightPage;
 
   @Input ('chapNum') chapterNumber;
+  @Input ('choice1') choice1;
+  @Input ('choice2') choice2;
+  @Input ('choice3') choice3;
   @Input ('goTo1') goTo1;
   @Input ('goTo2') goTo2;
   @Input ('goTo3') goTo3;
@@ -27,7 +30,9 @@ export class ChoicesComponent {
     this.gameData.getJsonData(this.chapterNumber)
   }
 
-  choice1(){
+  choice1Function(){
+    console.log('choice function 1');
+    //this.gameData.getJsonData(this.goTo1);
     if (this.goTo1 = "Fight") {
       this.navCtrl.push(FightPage); 
     } else {
@@ -36,7 +41,7 @@ export class ChoicesComponent {
     }
   }
 
-  choice2(){
+  choice2Function(){
     Promise.all ([
       this.storage.set("chapter", this.goTo2),
       this.gameData.getJsonData(this.goTo2),
