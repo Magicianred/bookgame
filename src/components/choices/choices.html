@@ -1,9 +1,9 @@
-<div class="choiceDiv">
+<div class="choiceDiv" *ngIf="this.goTo1 !== undefined">
     <button class="choiceButton" (click)='choice1Function()'>{{this.choice1}}</button>
 </div>
-<div class="choiceDiv">
+<div class="choiceDiv" *ngIf="this.goTo2 !== undefined">
     <button class="choiceButton" (click)='choice2Function()'>{{this.choice2}}</button>
   </div>
-  <div class="choiceDiv">
+  <div class="choiceDiv" *ngIf="this.goTo3 !== undefined">
     <button class="choiceButton" (click)='choice3Function()'>{{this.choice3}}</button>
   </div>

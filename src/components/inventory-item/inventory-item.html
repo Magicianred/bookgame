@@ -1,0 +1,12 @@
+<p>intenvory item component {{this.inventoryItem}}</p>
+<div class="inventoryItem">
+    <div class="itemImg"></div>
+    <div class="">
+      <p class="inventoryContent" ion-text color="primary">{{this.gameData.nameItem}}</p>
+      <p class="description">{{this.gameData.descriptionItem}}</p>
+      <div class="bottom">
+        <p class="extra" ion-text color="secondary">VITA</p>
+        <div class="button" ion-text color="primary" (tap)="itemClic()">Usa</div>
+      </div>
+    </div>
+  </div>

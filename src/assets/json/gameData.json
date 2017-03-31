@@ -1,16 +1,14 @@
 {   "gameName":"Shai",
     "story": {
-                "1": {
+                "1": {  "chapter": 1,
                         "text": "Da almeno due mesi, da quando il Duca ha ufficialmente concesso la mano di sua figlia, in città non si parla d'altro.<\/p> <p>Ad ogni bancarella del mercato di sente qualcuno parlare della giostra o dei giochi, dei cavalieri in armatura scintillante che sfileranno in parata tra le vie della città delle carovane di mercanti che arriveranno a seguito dello sposo, dal suo paese, portando spezie e profumi di terre lontane, stoffe e colori di altre casate, e storie e racconti di nuovi eroi mai sentite prima.\n",
                         "choice1":"Ti getti nella folla del mercato sperando di far perdere le tue tracce", 
                         "goTo1" : 2,
                         "choice2":"text for choice 2",
-                        "goTo2" : 2,
-                        "choice3":"text for choice 3",
-                        "goTo3" : 3,
-                        "Fight": ["wolf", 15, 3, 5, 101 ]
+                        "goTo2" : "Fight",
+                        "Fight": ["wolf", 15, 3, 5, 101] 
                 },
-                "2": {
+                "2": {  "chapter": 2,
                         "text": "this is a text for chapter 2",
                         "choice1":"text for choice 1", 
                         "goTo1" : "Fight",
@@ -19,8 +17,8 @@
                         "choice3":"text for choice 3",
                         "goTo3" : 3
                 },
-                "3": {
-                        "text": "this is a text",
+                "3": {  "chapter": 3,
+                        "text": "this is a text 3",
                         "choice1":"text for choice 1", 
                         "goTo1" : 1,
                         "choice2":"text for choice 2",
@@ -28,6 +26,22 @@
                         "choice3":"text for choice 3",
                         "goTo3" : 3
                 }
+    },
+    "inventory": {
+            "cloak": {  "jpg": "cloak.png",
+                    "name": "Mantello del mimetismo",
+                    "description": "Donato da Elf, ti permette di passare inosservata nella folla e di mimetizzarti tra gli alberi nel bosco",
+                    "buttonOn": "indossato",
+                    "buttonOff": "indossa",
+                    "skill": "track"
+            },
+            "2": {  "jpg": "healthKit.png",
+                    "name": "Kit salute",
+                    "description": "Donato dalla signora Mona",
+                    "buttonOn": "indossato",
+                    "buttonOff": "usa",
+                    "special": ["life", 2]
+            }
     },
     "game": {
         "lair": false,

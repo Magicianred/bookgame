@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cloak",
+    "name": "Mantello del mimetismo",
+    "description": "Donato da Elf, ti permette di passare inosservata nella folla e di mimetizzarti tra gli alberi nel bosco",
+    "jpg": "cloak.png",
+    "buttonOn": "indossato",
+    "buttonOff": "indossa",
+    "skill": "hide",
+    "skillText": "Prmette di acquisire l'abilità MIMETISMO"
+  },
+  {
+    "id": "necklace",
+    "name": "Collana della Signora Mona",
+    "description": "Non sempre tentare di fare i furbi è la giusta scelta da fare, e questa collana ne è la prova",
+    "jpg": "necklace.png",
+    "buttonOn": "indossato",
+    "buttonOff": "indossa",
+    "skill": "hide",
+    "skillText": "Prmette di acquisire l'abilità MIMETISMO"
+  },
+  {
+    "id": "nechealthkitklace",
+    "name": "Kit salute",
+    "description": "Noa",
+    "jpg": "healthkit.png",
+    "buttonOn": "indossato",
+    "buttonOff": "indossa",
+    "specialPowerLabel": "life",
+    "specialPowerValue": 2
+  }
+]

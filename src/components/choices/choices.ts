@@ -13,6 +13,9 @@ import { FightPage } from '../../pages/fight/fight';
 export class ChoicesComponent {
 
   public fightPage: any = FightPage;
+  thereIsAChoice1: boolean;
+  thereIsAChoice2: boolean;
+  thereIsAChoice3: boolean;
 
   @Input ('chapNum') chapterNumber;
   @Input ('choice1') choice1;
@@ -24,16 +27,21 @@ export class ChoicesComponent {
 
   constructor(public gameData: GameData, public storage:Storage, public navCtrl:NavController) {
     console.log('Hello Choices Component');
+    console.log('1'+this.goTo1);
+    console.log('2'+this.goTo2);
+    console.log('3'+this.goTo3);
   }
 
+
   ionViewDidLoad(chapterNumber: number) {
-    this.gameData.getJsonData(this.chapterNumber)
+    //this.isThereAChoice();
+    //this.gameData.getJsonData(this.chapterNumber)
   }
 
   choice1Function(){
     console.log('choice function 1');
     //this.gameData.getJsonData(this.goTo1);
-    if (this.goTo1 = "Fight") {
+    if (this.goTo1 == "Fight") {
       this.navCtrl.push(FightPage); 
     } else {
       this.storage.set("chapter", this.goTo1);
@@ -42,13 +50,26 @@ export class ChoicesComponent {
   }
 
   choice2Function(){
-    Promise.all ([
-      this.storage.set("chapter", this.goTo2),
-      this.gameData.getJsonData(this.goTo2),
-      ]).then((value) => {
+    console.log('choice function 2');
+    //this.gameData.getJsonData(this.goTo1);
+    if (this.goTo2 == "Fight") {
+      this.navCtrl.push(FightPage); 
+    } else {
+      this.storage.set("chapter", this.goTo2);
+      this.gameData.getJsonData(this.goTo2);
+    }
+  }
 
-      })
-    };
+  choice3Function(){
+    console.log('choice function 3');
+    //this.gameData.getJsonData(this.goTo1);
+    if (this.goTo3 == "Fight") {
+      this.navCtrl.push(FightPage); 
+    } else {
+      this.storage.set("chapter", this.goTo3);
+      this.gameData.getJsonData(this.goTo3);
+    }
+  }
 
 
 }

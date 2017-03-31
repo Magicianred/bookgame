@@ -1,11 +1,11 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { GameData } from '../../providers/game-data';
 
-//import { InventoryPage } from '../inventory/inventory';
-//import { LairPage } from '../lair/lair';
+import { InventoryPage } from '../inventory/inventory';
+import { LairPage } from '../lair/lair';
 
 
 
@@ -38,11 +38,6 @@ export class CharacterPage {
     this.talk = navParams.get('talk');*/
   }
 
-/*
-  load(bookNavigation) {
-    bookNavigation.goToLastChapter();
-  }*/
-
 
   ionViewWillEnter() {/*
       this.life = this.storage.get('life'),
@@ -62,6 +57,14 @@ export class CharacterPage {
     console.log('ionViewDidLoad CharacterPage');
     // console.log('life '+this.life);
     this.gameData.getJsonData(1);
+  }
+
+  goToInventory() {
+    this.navCtrl.push(InventoryPage);
+  }
+
+  goToLair() {
+    this.navCtrl.push(LairPage);
   }
 
 }

@@ -1,14 +1,14 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { MySettings } from '../../app/mySettings';
-import { BookNavigation } from '../../app/bookNavigation';
 
 import { ChooseCharacterPage } from '../choose-character/choose-character';
 import { Cap1Page } from '../cap1/cap1';
 import { CreditsPage } from '../credits/credits';
 import { RulesPage } from '../rules/rules';
+import { InventoryPage } from '../inventory/inventory';
 
 import { FightPage } from '../fight/fight';
 
@@ -24,9 +24,9 @@ export class HomePage {
   public rulesPage: any = RulesPage;
   public cap1Page: any = Cap1Page;
   public fightPage: any = FightPage;
+  public inventoryPage: any = InventoryPage;
 
   title = MySettings.TITLE;
-  //chapters = MySettings.CHAPTERS;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {}
   
@@ -90,6 +90,7 @@ export class HomePage {
       this.navCtrl.push(ChooseCharacterPage);
     });
    }
+   /*
 
 goToLastChapter() {
         Promise.all([
@@ -109,7 +110,7 @@ goToLastChapter() {
             reputation: value[3]
           });
         });
-      } 
+      } */
 
   goToPage(namePage: any){
      this.navCtrl.push(namePage);

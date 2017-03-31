@@ -1,22 +1,34 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the Inventory page.
+import { GameData } from '../../providers/game-data';
+import { InventoryItemComponent } from '../../components/inventory-item/inventory-item'
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-inventory',
   templateUrl: 'inventory.html'
 })
 export class InventoryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  inventory: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InventoryPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, public gameData:GameData, public http: Http) {
+    this.http.get('assets/json/inventory.json').map(res => res.json()).subscribe((data) => {
+    console.log(data);
+    this.inventory = data;
+    console.log(this.inventory);
+    });
   }
+
+ //inventory: any = ["cloak", "necklace"];
+
+  /*ionViewDidLoad() {
+    console.log('ionViewDidLoad InventoryPage');
+    this.gameData.getInventoryData();
+    
+  }*/
 
 }

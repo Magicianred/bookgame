@@ -12,3 +12,16 @@
   <p>'Sara!' Riconosci la voce che ti chiama, è tua madre. Cerchi di ignorarla ma la voce, insistente, urla più forte il tuo nome. 'Sara!'</p>
   <p>Tua madre è caparbia, e vuole qualcosa da te seminarla non sarà facile, ma a pochi metri intravedi le prime bancarelle del mercato e forse lì avrai 
     una speranza di perderti tra la folla.</p>
+
+
+    <!--<div class="inventoryItem">
+    <div class="itemImg"></div>
+    <div class="">
+      <p class="inventoryContent" ion-text color="primary">{{this.name}}</p>
+      <p class="description">{{this.description}}</p>
+      <div class="bottom">
+        <p class="extra" ion-text color="secondary">VITA</p>
+        <div class="button" ion-text color="primary" (tap)="itemClic()">Usa</div>
+      </div>
+    </div>
+  </div>-->

@@ -1,18 +1,15 @@
-<!--
-  Generated template for the Inventory page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>inventory</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of inventory">
+      <p>Name: {{item.name}}</p>
+      <p>Description: {{item.description}}</p>
+      <!--<img [src]="post.data.url" />-->
+    </ion-item>
+  </ion-list>
 
+  <!--
+  <div *ngFor = "let i of inventory">
+    <inventory-item [thingInInventory]='i'></inventory-item>
+    <!--<inventory-item [thingInInventory]='"necklace"'></inventory-item>--
+  </div>-->
 </ion-content>

@@ -7,9 +7,9 @@ import { MyApp } from './app.component';
 import { BottomBarComponent } from '../components/bottom-bar/bottom-bar';
 import { TopBarComponent } from '../components/top-bar/top-bar';
 import { ChoicesComponent } from '../components/choices/choices';
+import { InventoryItemComponent } from '../components/inventory-item/inventory-item';
 
 import { MySettings } from './mySettings';
-import { BookNavigation } from '../bookNavigation';
 import { RetrieveSql } from '../providers/retrieve-sql';
 import { GameData } from '../providers/game-data';
 
@@ -31,6 +31,7 @@ import { LairPage } from '../pages/lair/lair';
     BottomBarComponent,
     TopBarComponent,
     ChoicesComponent,
+    InventoryItemComponent,
     HomePage,
     CreditsPage,
     RulesPage,
