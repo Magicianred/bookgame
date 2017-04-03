@@ -1,0 +1,22 @@
+inventory-buttons {
+    .sellButton{
+        background-color: map-get($colors, primary);
+        width: 30vw;
+        height: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: white;
+    }
+    .useButton{
+        background-color: map-get($colors, secondary);
+        width: 30vw;
+        height: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: white;
+    }
+}

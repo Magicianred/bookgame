@@ -14,21 +14,29 @@ import { InventoryItemComponent } from '../../components/inventory-item/inventor
 export class InventoryPage {
 
   inventory: any;
+  imgUrl: string = "../img/inventoryReady/";
+  acquired: any = [];
+  acquiredOrNot: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public gameData:GameData, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public gameData:GameData, public http: Http, public storage:Storage) {
     this.http.get('assets/json/inventory.json').map(res => res.json()).subscribe((data) => {
     console.log(data);
     this.inventory = data;
-    console.log(this.inventory);
-    });
+    for (var i in this.inventory) {
+      var searchkey = "acquired"+this.inventory[i]["id"]
+      this.storage.get(searchkey).then((val) => {
+        this.acquired.push(val);
+        //console.log("aquiredOrNot "+val);
+        //console.log("acquired array "+this.acquired);
+        });
+    }
+  })
   }
 
- //inventory: any = ["cloak", "necklace"];
-
-  /*ionViewDidLoad() {
-    console.log('ionViewDidLoad InventoryPage');
-    this.gameData.getInventoryData();
-    
-  }*/
-
+  sell(price: number){
+    console.log("price "+price);
+    this.storage.get("money").then((data)=>{
+      this.storage.set("money", data+price);
+    })
+  }
 }

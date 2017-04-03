@@ -4,10 +4,11 @@
     "name": "Mantello del mimetismo",
     "description": "Donato da Elf, ti permette di passare inosservata nella folla e di mimetizzarti tra gli alberi nel bosco",
     "jpg": "cloak.png",
-    "buttonOn": "indossato",
-    "buttonOff": "indossa",
-    "skill": "hide",
-    "skillText": "Prmette di acquisire l'abilità MIMETISMO"
+    "superPowerText": "Permette di acquisire l'abilità MIMETISMO",
+    "addedSkill": "hide",
+    "useText": "indossa",
+    "sellPrice": 20,
+    "sellText": "Vendi a 20$"
   },
   {
     "id": "necklace",
@@ -20,13 +21,13 @@
     "skillText": "Prmette di acquisire l'abilità MIMETISMO"
   },
   {
-    "id": "nechealthkitklace",
+    "id": "healthkit",
     "name": "Kit salute",
     "description": "Noa",
     "jpg": "healthkit.png",
     "buttonOn": "indossato",
     "buttonOff": "indossa",
-    "specialPowerLabel": "life",
-    "specialPowerValue": 2
+    "addLife": 4,
+    "funcionAddLife": "<button (tap)=addLife(4)>Usa</button>"
   }
 ]

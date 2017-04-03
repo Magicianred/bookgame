@@ -1,15 +1,28 @@
 page-inventory {
     padding: 0!important;
- /*
-  #c1a26e MARRONE CHIARO
-  #598527 VERDE
- */
+
+    ion-content {
+    margin-top: 10vh;
+}
+
+inventory-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+.scroll-content p:first-child {
+    margin-top: 0 !important;
+}*/
+
 .inventoryItem {
     border-bottom: solid #c1a26e 0.4vh;
     padding-bottom: 2vh;
+    display: flex;
+    flex-direction: row;
 }
 .itemImg {
-    width: 15vw;
+    width: 25vw;
     height: 60vw;
     margin: 0 !important;
     padding: 0 !important;
@@ -21,9 +34,10 @@ page-inventory {
  .name{
      font-family: Escargot;
      font-size: 6vw;
+     color: map-get($colors, primary)
  }
  .extra{
-     text-transform: uppercase;
+    text-transform: uppercase;
     font-size: 5vw;
     display: flex;
     justify-content: left;
@@ -34,6 +48,11 @@ page-inventory {
  }
  .description {
      font-size: 4vw;
+ }
+ .superPowerText {
+     color: map-get($colors, secondary);
+     font-size: 4vw;
+     text-transform: uppercase;
  }
  .bottom{
      display:flex;

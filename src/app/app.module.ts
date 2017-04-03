@@ -6,8 +6,10 @@ import { MyApp } from './app.component';
 
 import { BottomBarComponent } from '../components/bottom-bar/bottom-bar';
 import { TopBarComponent } from '../components/top-bar/top-bar';
+import { BackBarComponent } from '../components/back-bar/back-bar';
 import { ChoicesComponent } from '../components/choices/choices';
 import { InventoryItemComponent } from '../components/inventory-item/inventory-item';
+import { InventoryButtonsComponent } from '../components/inventory-buttons/inventory-buttons';
 
 import { MySettings } from './mySettings';
 import { RetrieveSql } from '../providers/retrieve-sql';
@@ -30,8 +32,10 @@ import { LairPage } from '../pages/lair/lair';
     MyApp,
     BottomBarComponent,
     TopBarComponent,
+    BackBarComponent,
     ChoicesComponent,
     InventoryItemComponent,
+    InventoryButtonsComponent,
     HomePage,
     CreditsPage,
     RulesPage,

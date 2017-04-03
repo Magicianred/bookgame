@@ -80,6 +80,9 @@ export class HomePage {
       this.storage.set('table', 0);       //TABLE
 
       //GAME VARIABLES (necklace, biscuit)
+      this.storage.set('acquiredcloak', true);
+      this.storage.set('acquirednecklace', true);
+      this.storage.set('acquiredhealthkit', true);
       var test = this.storage.get('life');
       return test
   }

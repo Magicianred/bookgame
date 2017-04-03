@@ -1,15 +1,17 @@
+<back-bar></back-bar>
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let item of inventory">
-      <p>Name: {{item.name}}</p>
-      <p>Description: {{item.description}}</p>
-      <!--<img [src]="post.data.url" />-->
-    </ion-item>
-  </ion-list>
-
-  <!--
-  <div *ngFor = "let i of inventory">
-    <inventory-item [thingInInventory]='i'></inventory-item>
-    <!--<inventory-item [thingInInventory]='"necklace"'></inventory-item>--
-  </div>-->
+  <div *ngFor="let item of inventory; let i = index">
+    <div *ngIf="acquired[i]" class="inventoryItem">
+      <div class="itemImg">
+       <!-- <img [src]="imgUrl+{{item.jpg}}">-->
+      </div>
+      <div class="inventoryContent">
+          <p class="name">{{item.name}}</p>
+          <p class="description">{{item.description}}</p>
+          <p class="superPowerText">{{item.superPowerText}}</p>
+      
+      <inventory-buttons [itemName]='item' [addedSkill]='item.addedSkill' [useText]='item.useText' [sellPrice]='item.sellPrice' [sellText]='item.sellText'></inventory-buttons>
+      </div>
+    </div>
+  </div>
 </ion-content>
