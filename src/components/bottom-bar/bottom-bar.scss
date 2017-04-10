@@ -1,35 +1,57 @@
 bottom-bar {
     .stats{
+        background: url('../assets/img/bottomBar/bar.jpg') repeat-x;
+        background-size: contain;
         display: flex;
-        align-content: center;
-        justify-content: center;
+        padding: 0 0 0 2vw;
+        //align-content: center;
+        justify-content: space-between;
+        height: 6vh;
+        width: 70vw;
+    }
+    .stats:after{
+        background: url('../assets/img/bottomBar/barArrow.png') no-repeat;
+        background-size: contain;
+        height: 6vh;
+        width: 9vw;
+        content: '';
+        position: relative;
+        left: 7vw;
     }
     .bottomStats{
         font-family: Escargot;
-        flex-grow: 1;
-        height: 7vw;
-        font-size: 150%;
+        margin: 0 1vw 0 0;
+        padding: 1vw;
+        font-size: 5vw;
+        color: white;
+        display: flex;
+        align-items: center;
         img{
-            width: none;
+            height: 80%;
+            margin-right: 0.5vw;
+        }
+    }
+    .inventory{
+        height: 10vh;
+        margin: 0;
+        position: absolute;
+        right: 10vw;
+        img{
+            height: 80%;
         }
     }
 
+
     .chapterFooter{
     width: 100vw;
-    height: 12vh;
-    background: url(../img/pageReady/bottom.png);
+    height: 10vh;
+    background: url('../assets/img/bottomBar/bottom.png');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     bottom: 0;
     z-index: 99;
-    text-align: center;
-    p {
-        font-size: 6vw;
-    }
     }
 }

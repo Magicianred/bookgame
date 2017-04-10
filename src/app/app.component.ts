@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { RetrieveSql } from '../providers/retrieve-sql';
 import { GameData } from '../providers/game-data';
 
 import { HomePage } from '../pages/home/home';
+/*
+import { enableProdMode } from '@angular/core';
 
-
+enableProdMode();
+*/
 @Component({
   templateUrl: 'app.html',
-  providers: [RetrieveSql, GameData]
+  providers: [GameData]
 })
 export class MyApp {
   rootPage = HomePage;

@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+
+import { InventoryPage } from '../../pages/inventory/inventory';
+import { GameData } from '../../providers/game-data';
 
 @Component({
   selector: 'bottom-bar',
@@ -9,17 +11,12 @@ import { Storage } from '@ionic/storage';
 
 export class BottomBarComponent {
 
-  //PARAMS
-  public life: any;
-  public attack: any;
-  public money: any;
-  public reputation: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public gameData:GameData) {
+    this.gameData.getInitialStats();
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {
-    var life = this.life = navParams.get('life');
-    var attack =  this.attack = navParams.get('attack');
-    var money = this.money = navParams.get('money');
-    var reputation = this.reputation = navParams.get('reputation');
+  goToInventory() {
+    this.navCtrl.push(InventoryPage);
   }
 
 }

@@ -23,13 +23,13 @@
 }
 
 html {
-     background: url(../img/pageReady/bg.jpg) no-repeat center center fixed; 
+     background: url('../assets/img/pageReady/bg.jpg') no-repeat center center fixed; 
      -webkit-background-size: cover;
      -moz-background-size: cover;
      background-size: cover;
  }
 /*MAKES PAGE TRANSPARENT SO IT CAN SHOW HTML BG*/
-ion-app.md {
+ion-app {
     background-color: transparent !important;
 }
 
@@ -37,6 +37,13 @@ ion-app.md {
     background-color: transparent !important;
 }
 
+.primaryColor {
+    color: map-get($colors, primary);
+}
+.thirdColor{
+    color: map-get($colors, third);
+}
+/*
 .chapterHeader{
     width: 100vw;
     height: 14vh;
@@ -50,12 +57,12 @@ ion-app.md {
     p {
         font-size: 6vw;
     }
-}
+}*/
 
 .scroll-content p:first-child {
     margin-top: 8vh;
 }
-
+/*
 .topRightMenu {
     background: url(../img/icoChar.png);
     -webkit-background-size: cover;
@@ -68,8 +75,9 @@ ion-app.md {
     position: absolute;
     right: 3vw;
     top: 0;
-}
+}*/
 
+/*
 .choiceDiv{
     width: 90vw;
     display: flex;
@@ -96,7 +104,7 @@ ion-app.md {
   padding: 4vw;
     margin-top: -25px;
     margin-bottom: 2vh;
-}
+}*/
 
 .statsText{
     font-family: Escargot;

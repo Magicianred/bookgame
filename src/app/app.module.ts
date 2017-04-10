@@ -8,11 +8,7 @@ import { BottomBarComponent } from '../components/bottom-bar/bottom-bar';
 import { TopBarComponent } from '../components/top-bar/top-bar';
 import { BackBarComponent } from '../components/back-bar/back-bar';
 import { ChoicesComponent } from '../components/choices/choices';
-import { InventoryItemComponent } from '../components/inventory-item/inventory-item';
-import { InventoryButtonsComponent } from '../components/inventory-buttons/inventory-buttons';
 
-import { MySettings } from './mySettings';
-import { RetrieveSql } from '../providers/retrieve-sql';
 import { GameData } from '../providers/game-data';
 
 import { HomePage } from '../pages/home/home';
@@ -21,7 +17,6 @@ import { RulesPage } from '../pages/rules/rules';
 import { ChooseCharacterPage } from '../pages/choose-character/choose-character';
 import { ChooseSkillsPage } from '../pages/choose-skills/choose-skills';
 import { Cap1Page } from '../pages/cap1/cap1';
-import { Cap2Page } from '../pages/cap2/cap2';
 import { CharacterPage } from '../pages/character/character';
 import { FightPage } from '../pages/fight/fight';
 import { InventoryPage } from '../pages/inventory/inventory';
@@ -34,15 +29,12 @@ import { LairPage } from '../pages/lair/lair';
     TopBarComponent,
     BackBarComponent,
     ChoicesComponent,
-    InventoryItemComponent,
-    InventoryButtonsComponent,
     HomePage,
     CreditsPage,
     RulesPage,
     ChooseCharacterPage,
     ChooseSkillsPage,
     Cap1Page,
-    Cap2Page,
     CharacterPage,
     FightPage,
     InventoryPage,
@@ -60,7 +52,6 @@ import { LairPage } from '../pages/lair/lair';
     ChooseCharacterPage,
     ChooseSkillsPage,
     Cap1Page,
-    Cap2Page,
     CharacterPage,
     FightPage,
     InventoryPage,
@@ -72,8 +63,7 @@ import { LairPage } from '../pages/lair/lair';
     useClass: IonicErrorHandler,
     },
     Storage,
-    RetrieveSql,
-    GameData,
+    GameData
     ]
 })
 export class AppModule {}

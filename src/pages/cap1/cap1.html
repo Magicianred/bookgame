@@ -1,13 +1,18 @@
 <top-bar [chapNum]='this.gameData.chapter'></top-bar>
 
 <ion-content padding class="textChapter">
-  <p>{{this.gameData.text}}</p>
-  <choices [chapNum]='chapter' [choice1]='this.gameData.choice1' [choice2]='this.gameData.choice2' [choice3]='this.gameData.choice3' [goTo1]='this.gameData.goTo1' [goTo2]='this.gameData.goTo2' [goTo3]='this.gameData.goTo3'></choices>
+  <p><span class="good">{{this.gameData.beforeTextGood}}</span><span class="bad">{{this.gameData.beforeTextBad}}</span></p>
+  <p>{{this.gameData.text}}</p> 
+  <p><span class="good">{{this.gameData.afterTextGood}}</span><span class="bad">{{this.gameData.afterTextBad}}</span></p>
+  <choices [chapNum]='chapter' 
+           [choice1]='this.gameData.choice1' 
+           [choice2]='this.gameData.choice2' 
+           [choice3]='this.gameData.choice3' 
+           [goTo1]='this.gameData.goTo1' 
+           [goTo2]='this.gameData.goTo2' 
+           [goTo3]='this.gameData.goTo3'
+           [itemAcquired]='this.gameData.itemAcquired'
+           [skillAcquired]='this.gameData.itemAcquired'></choices>
 </ion-content>
 
-<ion-fab right bottom>
-    <button ion-fab color="light" (click)='choiche2()'><ion-icon name="arrow-dropright"></ion-icon></button>
-  </ion-fab>
-
-<!--
-<bottom-bar></bottom-bar>-->
+<bottom-bar></bottom-bar>

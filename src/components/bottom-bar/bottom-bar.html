@@ -1,9 +1,21 @@
 <div class="chapterFooter">
   <div class="stats">
-      <p class="bottomStats"><img src="../img/iconsReady/life.png" />{{life}}</p>
-      <p class="bottomStats"><img src="../img/iconsReady/attack.png" />{{attack}} </p>
-      <p class="bottomStats"><img src="../img/iconsReady/reputation.png" />{{reputation}} </p>
-      <p class="bottomStats"><img src="../img/iconsReady/money.png" />{{money}} </p>
-      <p (click)='goToInventory()' class="bottomStats"><img src="../img/iconsReady/inventory.png"/></p>
+      <div class="bottomStats">
+          <img src="../../assets/img/bottomBar/life.png" />
+          <p>{{this.gameData.lifeValue}}</p>
+      </div>
+      <div class="bottomStats">
+          <img src="../../assets/img/bottomBar/attack.png" />
+          <p>{{this.gameData.attackValue}}</p>
+      </div>
+      <div class="bottomStats">
+          <img src="../../assets/img/bottomBar/money.png" />
+          <p>{{this.gameData.moneyValue}}</p>
+      </div>
+      <div class="bottomStats">
+          <img src="../../assets/img/bottomBar/reputation.png" />
+          <p>{{this.gameData.reputationValue}}</p>
+      </div>
   </div>
+  <p (click)='goToInventory()' class="inventory"><img src="../img/iconsReady/inventory.png"/></p>
 </div>

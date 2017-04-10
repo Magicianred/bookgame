@@ -1,7 +1,6 @@
 page-inventory {
     padding: 0!important;
-
-    ion-content {
+ion-content {
     margin-top: 10vh;
 }
 
@@ -10,33 +9,37 @@ inventory-buttons {
     justify-content: space-between;
 }
 
-/*
 .scroll-content p:first-child {
     margin-top: 0 !important;
-}*/
+}
 
 .inventoryItem {
-    border-bottom: solid #c1a26e 0.4vh;
-    padding-bottom: 2vh;
+    border-bottom: solid 0.4vh;
+    border-color: map-get($colors, forth);
+    padding: 2vh 0;
     display: flex;
     flex-direction: row;
 }
+
 .itemImg {
-    width: 25vw;
-    height: 60vw;
+    width: 30vw;
+    height: 30vw;
     margin: 0 !important;
     padding: 0 !important;
 }
+
 .inventoryContent {
-    width: 75vw;
+    width: 65vw;
 }
 
- .name{
-     font-family: Escargot;
-     font-size: 6vw;
-     color: map-get($colors, primary)
- }
- .extra{
+.name{
+    font-family: Escargot;
+    font-size: 5vw;
+    color: map-get($colors, primary);
+    margin: 0;
+}
+
+.extra{
     text-transform: uppercase;
     font-size: 5vw;
     display: flex;
@@ -46,28 +49,66 @@ inventory-buttons {
     margin: 0;
     width: 40vw;
  }
- .description {
-     font-size: 4vw;
+
+.description {
+    font-size: 3.5vw;
+    margin: 1vh 0;
+    font-weight: lighter;
  }
- .superPowerText {
+
+.superPowerText {
      color: map-get($colors, secondary);
-     font-size: 4vw;
+     font-size: 3vw;
      text-transform: uppercase;
  }
- .bottom{
+
+.bottom{
      display:flex;
- }
- .button{
-     width: 45vw;
-     height: 5vh;
-     color: white;
-     background-color: #950539;
+}
+
+.buttonContainer{
      display: flex;
-     align-items: center;
-     justify-content: center;
-     text-transform: uppercase;
-     margin-top: 0 !important;
- }
+     flex-direction: row;
+     justify-content: space-between;
+}
+
+.sellButton{
+        background-color: map-get($colors, primary);
+        width: 30vw;
+        height: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: white;
+}
+
+.useButton{
+        background-color: map-get($colors, secondary);
+        width: 30vw;
+        height: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: white;
+}
+
+.outline{
+        background-color:none;
+        border: solid 2px map-get($colors, secondary);
+        width: 30vw;
+        height: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: map-get($colors, secondary);
+}
+
+.hide{
+        display: none;
+}
 
 
 }

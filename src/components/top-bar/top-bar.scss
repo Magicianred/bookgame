@@ -1,6 +1,30 @@
 top-bar {
+    .chapterHeader{
+        width: 100vw;
+        height: 14vh;
+        background: url(../../assets/img/topBarReady/top.png);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        position: absolute;
+        z-index: 99;
+        text-align: center;
+        p {
+            font-size: 6vw;
+        }
+    }/*
     .topRightMenu{
         width: 15vw;
+        height: 20vw;
+        position: absolute;
+        top: 0;
+        right: 5vw;
+    }*/
+
+    .topRightMenu {
+    background: url(../../assets/img/topBarReady/character.png)  no-repeat;
+        background-size: cover;
+        width: 17vw;
         height: 20vw;
         position: absolute;
         top: 0;

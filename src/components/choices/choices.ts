@@ -24,12 +24,11 @@ export class ChoicesComponent {
   @Input ('goTo1') goTo1;
   @Input ('goTo2') goTo2;
   @Input ('goTo3') goTo3;
+  @Input ('itemAcquired') newItem;
+  @Input ('skillAcquired') newSkill;
 
   constructor(public gameData: GameData, public storage:Storage, public navCtrl:NavController) {
     console.log('Hello Choices Component');
-    console.log('1'+this.goTo1);
-    console.log('2'+this.goTo2);
-    console.log('3'+this.goTo3);
   }
 
 
@@ -38,8 +37,23 @@ export class ChoicesComponent {
     //this.gameData.getJsonData(this.chapterNumber)
   }
 
+  acquireObject(itemName) {
+    this.storage.set("acquired"+itemName, true);
+  }
+
+
+
   choice1Function(){
     console.log('choice function 1');
+    //check if something is aquired with choice 1 add it as aquired
+    if (this.newItem[0] = 1) {
+      console.log("item acquired with choice 2 item= "+this.newItem[1])
+      this.storage.set("acquired"+this.newItem[1], true);
+    }
+    //check if some skill is itemAquired
+    if (this.newSkill[0] = 1) {
+      this.storage.set(this.newSkill[1], true);
+    }
     //this.gameData.getJsonData(this.goTo1);
     if (this.goTo1 == "Fight") {
       this.navCtrl.push(FightPage); 
@@ -51,10 +65,18 @@ export class ChoicesComponent {
 
   choice2Function(){
     console.log('choice function 2');
-    //this.gameData.getJsonData(this.goTo1);
+    if (this.newItem[0] = 2) {
+      console.log('choice function 2');
+      this.storage.set("acquired"+this.newItem[1], true);
+    }
+    if (this.newSkill[0] = 2) {
+      console.log('choice function 2');
+      this.storage.set(this.newSkill[1], true);
+    }
     if (this.goTo2 == "Fight") {
       this.navCtrl.push(FightPage); 
     } else {
+      console.log('choice function 2');
       this.storage.set("chapter", this.goTo2);
       this.gameData.getJsonData(this.goTo2);
     }
@@ -62,7 +84,14 @@ export class ChoicesComponent {
 
   choice3Function(){
     console.log('choice function 3');
-    //this.gameData.getJsonData(this.goTo1);
+    
+    if (this.newItem[0] = 3) {
+      this.storage.set("acquired"+this.newItem[1], true);
+    }
+    
+    if (this.newSkill[0] = 3) {
+      this.storage.set(this.newSkill[1], true);
+    }
     if (this.goTo3 == "Fight") {
       this.navCtrl.push(FightPage); 
     } else {

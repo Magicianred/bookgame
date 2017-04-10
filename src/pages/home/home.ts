@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
-import { MySettings } from '../../app/mySettings';
-
+import { GameData } from '../../providers/game-data';
 import { ChooseCharacterPage } from '../choose-character/choose-character';
 import { Cap1Page } from '../cap1/cap1';
 import { CreditsPage } from '../credits/credits';
 import { RulesPage } from '../rules/rules';
 import { InventoryPage } from '../inventory/inventory';
-
 import { FightPage } from '../fight/fight';
 
 @Component({
@@ -26,9 +24,7 @@ export class HomePage {
   public fightPage: any = FightPage;
   public inventoryPage: any = InventoryPage;
 
-  title = MySettings.TITLE;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage, public gameData: GameData) {}
   
 
   ionViewDidLoad() {
@@ -44,6 +40,10 @@ export class HomePage {
     console.log(
           this.storage.get('chapter').then((val) => {
             console.log('chapter ', val);
+          }));
+    console.log(
+          this.storage.get('acquirednecklace').then((val) => {
+            console.log('acquirednecklace ', val);
           }));
   }
   /*
@@ -81,9 +81,12 @@ export class HomePage {
 
       //GAME VARIABLES (necklace, biscuit)
       this.storage.set('acquiredcloak', true);
-      this.storage.set('acquirednecklace', true);
+      this.storage.set('worncloak', false);
+      this.storage.set('acquirednecklace', false);
+      this.storage.set('wornnecklace', false);
       this.storage.set('acquiredhealthkit', true);
-      var test = this.storage.get('life');
+      var test = this.storage.get('acquirednecklace');
+      console.log('acquirednecklace'+test);
       return test
   }
 
@@ -93,9 +96,14 @@ export class HomePage {
       this.navCtrl.push(ChooseCharacterPage);
     });
    }
-   /*
-
+   
 goToLastChapter() {
+  console.log('gotolastchapter function');
+  this.storage.get('chapter').then((data) => {
+    this.goToPage(Cap1Page);
+    this.gameData.getJsonData(data);
+  })
+  /*
         Promise.all([
         this.storage.get('life'),
         this.storage.get('attack'),
@@ -103,6 +111,8 @@ goToLastChapter() {
         this.storage.get('reputation'),
         this.storage.get('chapter'),
         ]).then((value) => {
+          
+          
           var posArray :number = value[4] - 1;  //POSITION OF THE COMPONENT IN THE ARRAY
           console.log("life "+value[0]);
           //console.log("chapter "+chapter);
@@ -112,8 +122,8 @@ goToLastChapter() {
             money: value [2],
             reputation: value[3]
           });
-        });
-      } */
+        });*/
+      } 
 
   goToPage(namePage: any){
      this.navCtrl.push(namePage);

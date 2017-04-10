@@ -1,16 +1,22 @@
 <back-bar></back-bar>
 <ion-content padding>
   <div *ngFor="let item of inventory; let i = index">
-    <div *ngIf="acquired[i]" class="inventoryItem">
+    <div *ngIf="acquired[i]" class="inventoryItem" id=item [class.hide]='!acquired[i]'>
       <div class="itemImg">
-       <!-- <img [src]="imgUrl+{{item.jpg}}">-->
+        <img [src]="imgUrl+item.jpg" />
       </div>
       <div class="inventoryContent">
           <p class="name">{{item.name}}</p>
           <p class="description">{{item.description}}</p>
           <p class="superPowerText">{{item.superPowerText}}</p>
-      
-      <inventory-buttons [itemName]='item' [addedSkill]='item.addedSkill' [useText]='item.useText' [sellPrice]='item.sellPrice' [sellText]='item.sellText'></inventory-buttons>
+          <div class="buttonContainer">
+            <div *ngIf="item.useText" class="useButton" (tap)="use(i)">{{item.useText}}</div>
+            <div *ngIf="!item.useText">
+              <div  class="useButton" (tap)='wear(i, item.id)' [class.hide]='worn[i]'>{{item.wearText}}</div>
+              <div  class="outline" (tap)='unwear(i, item.id)' [class.hide]='!worn[i]'>{{item.unwearText}}</div>
+            </div>
+            <div class="sellButton" (tap)="sell(i, item.id, item.sellPrice)">{{item.sellText}}</div>
+          </div>
       </div>
     </div>
   </div>

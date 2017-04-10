@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Http } from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
 import { GameData } from '../../providers/game-data';
@@ -25,11 +27,15 @@ export class Cap1Page {
   goTo2: number;
   choice3: string;
   goTo3: number;
-  fight: any;   
+  fight: any;  
+  stats: any = []; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage, public gameData:GameData, public http: Http) {
     this.chapter = 1;
   }
+
+
+
 
   ionViewDidLoad() {
     this.gameData.getJsonData(this.chapter);
