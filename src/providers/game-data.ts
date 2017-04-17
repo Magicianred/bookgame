@@ -7,6 +7,20 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class GameData {
 
+  /* LANGUAGE */
+  game_it = 'assets/json/gameData.json';
+  inventory_it = 'assets/json/inventory.json';
+  game_fur = 'assets/json/gameData_fur.json';
+  inventory_fur = 'assets/json/inventory_fur.json';
+  game_en = 'assets/json/gameData_en.json';
+  inventory_en = 'assets/json/inventory_en.json';
+  gameJson: any;
+  inventoryJson: any;
+
+  creditsButton: any;
+  rulesButton: any;
+  settingsButton: any;
+
   text: string;
   beforeTextGood: string;
   beforeTextBad: string;
@@ -25,10 +39,68 @@ export class GameData {
 
   constructor(public http: Http, public storage: Storage) {
     console.log('Hello GameData Provider');
+    this.gameJson = this.game_it;
+    this.inventoryJson = this.inventory_it;
+  }
+
+  getHome() {
+    this.storage.get("language").then((data) => {
+      switch (data) {
+        case 'it':
+          this.gameJson = this.game_it;
+          this.inventoryJson = this.inventory_it;
+          this.getHomeButtons();
+          break;
+        case 'en':
+          this.gameJson = this.game_en;
+          this.inventoryJson = this.inventory_en;
+          this.getHomeButtons();
+          break;
+        case 'fur':
+          this.gameJson = this.game_fur;
+          this.inventoryJson = this.inventory_fur;
+          this.getHomeButtons();
+          break;
+      }
+    });
+  }
+
+  getHomeButtons(){
+    this.http.get(this.gameJson).map(res => res.json().home).subscribe((data) => {
+      this.creditsButton = data["credits"];
+      this.rulesButton = data["rules"];
+      this.settingsButton = data["settings"];
+    });
+  }
+
+  lifeLabel: any;
+  attackLabel: any;
+  moneyLabel: any;
+  reputationLabel: any;
+  pointsLabel: any;
+  fightTextLabel: any;
+  fightMsg1: any;
+  fightMsg2: any;
+  fightMsg3: any;
+  fightMsg4: any;
+
+  getLabelsName(){
+    this.http.get(this.gameJson).map(res => res.json()).subscribe((data) => {
+      this.lifeLabel = data["labels"]["life"];
+      this.attackLabel = data["labels"]["attack"];
+      this.moneyLabel = data["labels"]["money"];
+      this.reputationLabel = data["labels"]["reputation"];
+      this.pointsLabel = data ["labels"]["points"];
+      this.fightTextLabel = data ["labels"]["fightText"];
+      this.fightMsg1 = data ["labels"]["fightMsg1"];
+      this.fightMsg2 = data ["labels"]["fightMsg2"];
+      this.fightMsg3 = data ["labels"]["fightMsg3"];
+      this.fightMsg4 = data ["labels"]["fightMsg4"];
+    });
   }
 
   getJsonData(chapter: number){
-     this.http.get('assets/json/gameData.json').map(res => res.json()).subscribe((data) => {
+     this.http.get(this.gameJson).map(res => res.json()).subscribe((data) => {
      this.beforeTextGood = data["story"][chapter]["beforeTextGood"];
      this.beforeTextBad = data["story"][chapter]["beforeTextBad"];
      this.text = data["story"][chapter]["text"];
@@ -131,7 +203,7 @@ description: string;
 data: any;
 
 getInventoryData(){
-     this.http.get('assets/json/inventory.json').map(res => res.json()).subscribe((data) => {
+     this.http.get(this.inventoryJson).map(res => res.json()).subscribe((data) => {
      console.log(data);
      //console.log ("inventory"+this.inventory);
      return data;
@@ -147,7 +219,7 @@ getInventoryData(){
 
   getItemInventory(item: any){
     //console.log('started getItemInventory function');  
-    this.http.get('assets/json/inventory.json').map(res => res.json()[item]).subscribe((data) => {
+    this.http.get(this.inventoryJson).map(res => res.json()[item]).subscribe((data) => {
        data.toPromise();
        console.log(data);
       //console.log("item"+item);
@@ -159,6 +231,26 @@ getInventoryData(){
       this.descriptionItem = data[item]["description"];
       this.buttonOn = data[item]["buttonOn"];
       console.log('name '+this.nameItem);*/
+    });
+  }
+
+  hide: any;
+  swim: any;
+  track: any;
+  talk: any;
+
+  getSkillsStats(){
+    this.storage.get('hide').then((data) => {
+      this.hide = data;
+    });
+    this.storage.get('swim').then((data) => {
+      this.swim = data;
+    });
+    this.storage.get('talk').then((data) => {
+      this.talk = data;
+    });
+    this.storage.get('track').then((data) => {
+      this.track = data;
     });
   }
 

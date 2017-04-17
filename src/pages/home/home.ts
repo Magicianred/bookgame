@@ -9,6 +9,7 @@ import { CreditsPage } from '../credits/credits';
 import { RulesPage } from '../rules/rules';
 import { InventoryPage } from '../inventory/inventory';
 import { FightPage } from '../fight/fight';
+import { SettingsPage } from '../settings/settings'; 
 
 @Component({
   selector: 'page-home',
@@ -28,6 +29,8 @@ export class HomePage {
   
 
   ionViewDidLoad() {
+    this.gameData.getHome();
+    /*
     console.log('ionViewDidLoad ChooseCharacterPage');
     console.log(
       this.storage.get('life').then((val) => {
@@ -45,13 +48,13 @@ export class HomePage {
           this.storage.get('acquirednecklace').then((val) => {
             console.log('acquirednecklace ', val);
           }));
+          */
   }
-  /*
-  //COMMON FUNCTIONS
-  goToPage(namePage: any){
-      this.navCtrl.push(namePage);
+  
+  goToSettings() {
+    this.navCtrl.push(SettingsPage);
   }
-*/
+
   goToPageWithParam(namePage: any, paramsValues: Array<Number>) {
       this.navCtrl.push(namePage, {
         life: paramsValues[0],

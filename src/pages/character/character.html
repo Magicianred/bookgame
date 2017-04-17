@@ -5,25 +5,17 @@
     <img src="assets/img/charPageReady/char.png">
   </div>
   <div class="columns">
-    <div class="stats">
-      <div class="statsLabels">
-        
-      </div>
-      <!--
-      <div class="statsLabels"> 
-        <p>Vita:</p> 
-        <p>Attacco:</p>
-        <p>Soldi:</p>
-        <p>Reputazione:</p>
-        <p>Compagni:</p>
-      </div>-->
-      <div class="statsValues"> 
-        <p>{{life}}</p>
-        <p>{{attack}}</p>
-        <p>{{money}}</p>
-        <p>{{reputation}}</p>
-        <p>{{minions}}</p>
-      </div>
+    <div class="label">
+      <p>{{this.gameData.lifeLabel}}:</p>
+      <p>{{this.gameData.attackLabel}}:</p>
+      <p>{{this.gameData.moneyLabel}}:</p>
+      <p>{{this.gameData.reputationLabel}}:</p>
+    </div>
+    <div class="value"> 
+      <p >{{this.gameData.lifeValue}}</p>
+      <p >{{this.gameData.attackValue}}</p>
+      <p class="value">{{this.gameData.moneyValue}}</p>
+      <p class="value">{{this.gameData.reputationValue}}</p>
     </div>
     <div class="extra">
       <div class="inventary" (click)="goToInventory()"></div>
@@ -33,34 +25,34 @@
   <div class="skillsDisplay">
     <div [ngSwitch]=swim>
       <div class="skill" *ngSwitchCase='false'>
-        <img src="assets/img/charPageReady/swim_off.png" />
+        <img src="../assets/img/charPageReady/swim_off.png" />
       </div>
       <div class="skill" *ngSwitchCase='true'>
-        <img src="assets/img/charPageReady/swim.png" />
+        <img src="../assets/img/charPageReady/swim.png" />
       </div>
     </div>
-    <div [ngSwitch]=hide>
+    <div [ngSwitch]=this.gameData.hide>
       <div class="skill" *ngSwitchCase='false'>
-        <img src="assets/img/charPageReady/hide_off.png" />
+        <img src="../assets/img/charPageReady/hide_off.png" />
       </div>
       <div class="skill" *ngSwitchCase='true'>
-        <img src="assets/img/charPageReady/hide.png" />
+        <img src="../assets/img/charPageReady/hide.png" />
       </div>
     </div>
     <div [ngSwitch]=track>
       <div class="skill" *ngSwitchCase='false'>
-        <img src="assets/img/charPageReady/track_off.png" />
+        <img src="../assets/img/charPageReady/track_off.png" />
       </div>
       <div class="skill" *ngSwitchCase='true'>
-        <img src="assets/img/charPageReady/track.png" />
+        <img src="../assets/img/charPageReady/track.png" />
       </div>
     </div>
     <div [ngSwitch]=talk>
       <div class="skill" *ngSwitchCase='false'>
-        <img src="assets/img/charPageReady/talk_off.png" />
+        <img src="../assets/img/charPageReady/talk_off.png" />
       </div>
       <div class="skill" *ngSwitchCase='true'>
-        <img src="assets/img/charPageReady/talk.png" />
+        <img src="../assets/img/charPageReady/talk.png" />
       </div>
     </div>
   </div>

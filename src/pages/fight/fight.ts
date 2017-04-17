@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { GameData } from '../../providers/game-data';
 
 
 
@@ -12,33 +13,36 @@ import { AlertController } from 'ionic-angular';
 export class FightPage {
   //PARAMS
   public characterLife: any;
-  public characterAttack: any;
+  //public characterAttack: any;
+
+  public fightParams: any;
+  public enemyName: any;
   public enemyAttack: any;
   public enemyLife: any;
   public winChapter: any;
-  public loseChapter: any;
+  public looseChapter: any;
   public enemySrc: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
-    this.characterLife = navParams.get('characterLife');
-    this.characterAttack = navParams.get('characterAttack');
-    this.enemyAttack = navParams.get('enemyAttack');
-    this.enemyLife = navParams.get('enemyLife');
-    this.winChapter = navParams.get('winChapter');
-    this.loseChapter = navParams.get('loseChapter');
-    var 
-    enemySrc = this.enemySrc = "assets/img/charReady/" + navParams.get('enemySrc') +'.png'
+  constructor(public navCtrl: NavController, public navParams: NavParams, private gameData: GameData, private alertCtrl: AlertController) {
+    this.fightParams = navParams.get('fightParams');
+    this.charDiceOne = "-";
+    this.charDiceTwo = "-";
+    this.enemyDiceOne = "-";
+    this.enemyDiceTwo = "-";
+    console.log(this.fightParams);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FightPage');
-    console.log('characterLife '+this.characterLife);
-    console.log('characterAttack '+this.characterAttack);
-    console.log('enemyAttack '+this.enemyAttack);
-    console.log('enemyLife '+this.enemyLife);
-    console.log('winChapter '+this.winChapter);
-    console.log('loseChapter '+this.loseChapter);
-    console.log('enemySrc '+this.enemySrc);
+    this.gameData.getLabelsName();
+    this.gameData.getSkillsStats();
+    /* enemyName | enemyLife | enemyAttack | winChapter | loseChapter */
+    this.characterLife = this.gameData.lifeValue;
+    this.enemyName = this.fightParams[0];
+    this.enemyLife = this.fightParams[1];
+    this.enemyAttack = this.fightParams[2];    
+    this.winChapter = this.fightParams[3];
+    this.looseChapter = this.fightParams[4];
+    this.enemySrc = this.enemySrc = "../assets/img/charReady/" + this.enemyName +'.png'
   }
 
   presentAlert(message: string) {
@@ -52,16 +56,28 @@ export class FightPage {
   alert.present();
   }
 
-  youWinAlert() {
+  youWinAlert(winchapter: any) {
     let alert = this.alertCtrl.create({
     title: "Title",
     message: "Hai vinto!",
-    buttons: ['prosegui'],
+    buttons: [
+      {
+        text: 'Prosegui',
+        role: 'cancel',
+        handler: () => {
+          console.log('prosegui verso '+winchapter);
+        }
+      }],
     cssClass: "winAlert",
     });
-    //alert.setCssClass('winAlert');
     alert.present();
   }
+
+
+
+
+
+
 
   youLoseAlert() {
     let alert = this.alertCtrl.create({
@@ -77,31 +93,64 @@ export class FightPage {
     var firstDice: number = Math.floor(Math.random() * 6 + 1);
     var secondDice: number = Math.floor(Math.random() * 6 + 1);
     var attack: number = firstDice + secondDice;
+    //console.log("throwTwoDices "+attack);
     return attack
   }
 
-  fight() {
-    var characterDices: number = this.throwTwoDices();
-    var characterFightAttack: number = characterDices + this.characterAttack;
-    var enemyDices: number = this.throwTwoDices();
-    var enemyFightAttack: number = enemyDices + this.enemyAttack;
+  throwDice(){
+    var dice: number = Math.floor(Math.random() * 6 + 1);
+    return dice
+  }
 
-    var message: string = "Hai totalizzato " + characterFightAttack + " punti. Il tuo avversario ne ha totalizzati " + enemyFightAttack + ".";
+  public message: any;
+  public charDiceOne: any;
+  public charDiceTwo: any;
+  public enemyDiceOne: any;
+  public enemyDiceTwo: any;
+  public attackMessage: any;
+  public damageMessage: any;
+
+  fight() {
+    //reset messaggi
+    this.attackMessage = "";
+    this.damageMessage = "";
+    
+    this.charDiceOne = this.throwDice();
+    this.charDiceTwo = this.throwDice();  
+
+    var characterDices: number = +this.charDiceOne + +this.charDiceTwo;
+    var characterFightAttack: number = characterDices + this.gameData.attackValue;
+    console.log("characterFightAttack: "+characterFightAttack);
+
+    this.enemyDiceOne = this.throwDice();
+    this.enemyDiceTwo = this.throwDice(); 
+    var enemyDices: number = +this.enemyDiceOne + +this.enemyDiceTwo;
+
+    var enemyFightAttack: number = enemyDices + this.enemyAttack;
+    console.log("enemyFightAttack: "+enemyFightAttack);
+    //this.gameDatafightMsg sono le scritte del messaggio
+    this.message = this.gameData.fightMsg1 + characterFightAttack + this.gameData.fightMsg2 + enemyFightAttack;
+    console.log(this.message);
+    
     if (characterFightAttack > enemyFightAttack) {
       //console.log('attacca');
         var damage: number = characterFightAttack - enemyFightAttack;
+        console.log("damage" + damage);
         this.enemyLife = this.enemyLife - damage;
-        message = message + " Infliggi un danno di " + damage + " punti."
-        this.presentAlert(message);
+        this.attackMessage = damage+this.gameData.fightMsg3;
+        //console.log(this.attackMessage);
+        //this.message = this.message + " Infliggi un danno di " + damage + " punti."
+        //this.presentAlert(message);
         if (this.enemyLife <=0) {
-          this.youWinAlert();
+          this.youWinAlert(this.winChapter);
         }
       } if (characterFightAttack < enemyFightAttack) {
-        //console.log('subisci');
+        console.log('subisci');
         var damage: number = enemyFightAttack - characterFightAttack;
-        this.characterLife = this.characterLife - damage;
-        message = message + " Subisci un danno di " + damage + " punti."
-        this.presentAlert(message);
+        this.characterLife = this.gameData.lifeValue - damage;
+        this.damageMessage = damage+this.gameData.fightMsg4;
+        //this.message = this.message + " Subisci un danno di " + damage + " punti."
+        //this.presentAlert(message);
         if (this.characterLife <=0) {
           this.youLoseAlert();
         }

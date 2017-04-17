@@ -14,7 +14,6 @@ page-fight {
         align-items: center;
     }
     .characterImg_fightPage{
-        //width: 55vw;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -26,36 +25,68 @@ page-fight {
         height: 40vh;
     }
     .enemyImgContainer_fightPage{
-        width: 65vw;
-        height: 35vh;
+        width: 60vw;
+        //height: 35vh;
         display: flex;
         align-items: center;
     }
-    .enemyImg_fightPage{
+    /*.enemyImg_fightPage{
         //width: 55vw;
         height: 40vh;
-    }
+    }*/
 
-    .fightButton{
-        height: 20vh;
+    .fightButton {
+        font-family: escargot;
+        font-size: 6vw;
+        text-transform: uppercase;
+        color: white;
+        background-color: map-get($colors, primary);
+        height: 8vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .fight {
-        background-color: red;
-        height: 5vh;
-        padding: 7vw;
+    .fightText{
+        //color: map-get($colors, primary);
+        text-transform: uppercase;
+        padding-top: 1vh;
+        height: 10vh;
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-    }
-    .statsText{
-        font-family: Escargot;
-        font-size: 150%;
+        p:first-child {
+            margin: 0 !important;
+            align-items: center;
+            text-align: center;
+            text-transform: none;
+        }
     }
 
+    .stats {
+        font-family: escargot;
+        font-size: 6vw;
+        color: map-get($colors, third);
+        & .value {
+            color: map-get($colors, fourth) !important;
+        }
+    }
 
+    .winAlert {
+        background: red;
+        border-color: red solid 2px;
+    }
+    .winAlert .alert-head  {
+        background-color: map-get($colors, secondary) !important;
+    }
+    .winAlert .alert-message  {
+        background-color: map-get($colors, secondary) !important;    
+    }
+    .winAlert   {
+        .alert-button-group{
+            color: map-get($colors, secondary) !important;
+        }
+    }
 
 
 }

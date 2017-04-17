@@ -7,42 +7,48 @@ page-character {
 
     .columns {
         display: flex;
+        height: 30vh;
+        font-family: Escargot;
+        font-size: 7vw;
     }
     .stats {
         display: flex;
-        width: 60vw;
-        & p{
-            margin: 0 0 2.5vw 0;
-            font-weight: bold;
-            font-family: Escargot;
-            font-size: 5vw;
-        }
+        color: map-get($colors, third);
+        display: flex;
+        flex-direction: column;
+        line-height: 1.5;
+
     }
-    .statsLabels {
-        //font-family: Escargot;
-        //font-size: 5vw;
-        width: 50vw;
-        text-align: right;
-        color:#322408;
+
+    .label{
+        width: 45vw;
+        color: map-get($colors, third);
+        display: flex;
+        flex-direction: column;
     }
-    .statsLabels p:first-child, .statsValues p:first-child{
+    .value {
+        width: 25vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: map-get($colors, forth);
+        font-weight: bold;
+    }
+
+    .stats p:first-child {
         margin-top: 0 !important;
     }
 
-    .statsValues{
-        width: 10vw;
-        text-align: center;
-        color: red;
-    }
-
-    .extra{
+    .extra {
         width: 40vw;
+        display: flex;
+        flex-direction: column;
     }
-    
+ 
 
 
     .inventary{
-        background: url(../img/charPageReady/inventary.png);
+        background: url("../assets/img/charPageReady/inventary.png");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -50,7 +56,7 @@ page-character {
         height: 25vw;
     }
     .lair{
-        background: url(../img/charPageReady/lair.png);
+        background: url('../assets/img/charPageReady/lair.png');
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -61,6 +67,7 @@ page-character {
     .skillsDisplay{
         display: flex;
         justify-content: center;
+        height: 10vh;
     }
     .skill{
         width: 20vw;

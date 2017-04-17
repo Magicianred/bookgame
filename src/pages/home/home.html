@@ -1,13 +1,13 @@
 <ion-content padding>
-  <h1>{{title}}</h1>
 <ion-fab left middle class="fixedLeft">
     <div class="homeButton fixedLeft" (click)='start()'>Start</div>
-    <div class="homeButton fixedLeft" (click)='goToPage(creditsPage)'>Credits</div>
+    <div class="homeButton fixedLeft" (click)='goToPage(creditsPage)'>{{this.gameData.creditsButton}}</div>
     <div class="homeButton fixedLeft" (click)='goToFightPage(2 , 3, "wolf")'>Fight</div>
 </ion-fab>
 <ion-fab right middle class="fixedRight">
     <div class="homeButton fixedRight" (click)='goToLastChapter()'>Load</div>
-    <div class="homeButton fixedRight" (click)='goToPage(rulesPage)'>Rules</div>
+    <div class="homeButton fixedRight" (click)='goToPage(rulesPage)'>{{this.gameData.rulesButton}}</div>
+    <div class="homeButton fixedRight" (tap)='goToSettings()'>{{this.gameData.settingsButton}}</div>
     <div class="homeButton fixedRight" (click)='goToPage(inventoryPage)'>Inventory</div>
 </ion-fab>
  

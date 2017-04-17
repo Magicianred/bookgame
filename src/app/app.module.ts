@@ -21,6 +21,7 @@ import { CharacterPage } from '../pages/character/character';
 import { FightPage } from '../pages/fight/fight';
 import { InventoryPage } from '../pages/inventory/inventory';
 import { LairPage } from '../pages/lair/lair';
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { LairPage } from '../pages/lair/lair';
     FightPage,
     InventoryPage,
     LairPage,
+    SettingsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -56,6 +58,7 @@ import { LairPage } from '../pages/lair/lair';
     FightPage,
     InventoryPage,
     LairPage,
+    SettingsPage
   ],
   providers: [
     {

@@ -1,0 +1,15 @@
+<ion-content padding>
+  <back-bar></back-bar>
+  <div class="langChoices">
+    <p>{{this.lang[0]}}</p>
+    <div class="language" (tap)=setLanguageIt()>
+      <img class="imgLanguage" src='../assets/img/langReady/it.png' />Italiano
+      </div>
+    <div class="language" (tap)=setLanguageEn()><img class="imgLanguage" src='../assets/img/langReady/en.png' />Inglese</div>
+    <div class="language" (tap)=setLanguageFur()><img class="imgLanguage" src='../assets/img/langReady/fur.png' />Friulano</div>
+  </div>
+  <div>
+    <div class="message">{{this.lang[1]}}</div>
+    <div class="confirmButton">{{this.lang[2]}}</div>
+  </div>
+</ion-content>

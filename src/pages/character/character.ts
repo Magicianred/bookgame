@@ -27,36 +27,16 @@ export class CharacterPage {
   public track: any;
   public talk: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage, public gameData:GameData) {
-    /*this.life = navParams.get('life'); 
-    this.attack = navParams.get('attack');
-    this.money = navParams.get('money');
-    this.reputation = navParams.get('reputation');
-    this.swim = navParams.get('swim');
-    this.hide = navParams.get('hide');
-    this.track = navParams.get('track');
-    this.talk = navParams.get('talk');*/
-  }
-
-
-  ionViewWillEnter() {/*
-      this.life = this.storage.get('life'),
-      this.attack = this.storage.get('attack'),
-      this.money= this.storage.get('money'),
-      this.reputation = this.storage.get('reputation'),
-      this.swim = this.storage.get('swim'),
-      this.hide = this.storage.get('hide'),
-      this.track = this.storage.get('track'),
-      this.talk = this.storage.get('talk')*/
-    }
-
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage, public gameData:GameData) {}
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CharacterPage');
+    this.gameData.getLabelsName();
+    this.gameData.getSkillsStats();
     // console.log('life '+this.life);
-    this.gameData.getJsonData(1);
+
+    //this.gameData.getJsonData();
   }
 
   goToInventory() {

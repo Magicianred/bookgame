@@ -10,6 +10,7 @@ export class BackBarComponent {
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
   
   back() {
+    console.log('clicked back');
     this.navCtrl.pop();
   }
 

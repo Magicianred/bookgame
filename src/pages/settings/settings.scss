@@ -1,0 +1,49 @@
+page-settings {
+    .langChoices {
+        margin-top:10vh;
+    }
+    p{
+            font-size: 8vw;
+    font-family: escargot;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    }
+
+    .language {
+        width: 80vw;
+        margin:5vw;
+        height: 10vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imgLanguage{
+        width: 10vw;
+        margin-right: 2vw;
+            font-size: 8vw;
+    font-family: escargot;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    }
+    .message {
+        font-size: 4vw;
+    }
+    .language {
+    font-family: escargot;
+    font-size: 7vw;
+    }
+
+    .confirmButton{
+        background-color: map-get($colors, primary);
+        width: 30vw;
+        height: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: white;
+}
+}
