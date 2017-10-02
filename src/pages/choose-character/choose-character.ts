@@ -6,12 +6,6 @@ import { TrollPage } from '../troll/troll';
 import { HumanPage } from '../human/human';
 import { ChooseSkillsPage } from '../choose-skills/choose-skills';
 
-/*
-  Generated class for the ChooseCharacter page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-choose-character',
   templateUrl: 'choose-character.html'

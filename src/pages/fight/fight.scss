@@ -68,7 +68,7 @@ page-fight {
         font-size: 6vw;
         color: map-get($colors, third);
         & .value {
-            color: map-get($colors, fourth) !important;
+            color: map-get($colors, primary) !important;
         }
     }
 
@@ -87,6 +87,5 @@ page-fight {
             color: map-get($colors, secondary) !important;
         }
     }
-
 
 }

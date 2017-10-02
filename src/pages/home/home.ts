@@ -11,6 +11,9 @@ import { InventoryPage } from '../inventory/inventory';
 import { FightPage } from '../fight/fight';
 import { SettingsPage } from '../settings/settings'; 
 
+import { WinAlertPage } from '../win-alert/win-alert';
+import { LoseAlertPage } from '../lose-alert/lose-alert';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -64,6 +67,19 @@ export class HomePage {
       });
   }
 
+  goToWinAlertPage(){
+    this.navCtrl.push(WinAlertPage, {
+      goToThisChapter: 3
+    }) 
+  };
+
+  goToLoseAlertPage(){
+    this.navCtrl.push(LoseAlertPage, {
+      goToThisChapter: 3
+    }) 
+  };
+
+
   setEverythingToZero(){
       //GAME
       this.storage.set('chapter', 0)     //CHAPTER
@@ -88,6 +104,7 @@ export class HomePage {
       this.storage.set('acquirednecklace', false);
       this.storage.set('wornnecklace', false);
       this.storage.set('acquiredhealthkit', true);
+      this.storage.set('acquiredimmortalpotion', true);
       var test = this.storage.get('acquirednecklace');
       console.log('acquirednecklace'+test);
       return test

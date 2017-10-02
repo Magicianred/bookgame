@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Http } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
@@ -30,9 +30,18 @@ export class Cap1Page {
   fight: any;  
   stats: any = []; 
 
+  goToThisChapter: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage, public gameData:GameData, public http: Http) {
-    this.chapter = 1;
-  }
+    //se arrivo dalla fight page ho un parametro. Controllo se c'è. Se c'è lo salvo e utilizzo this.chapter come quello, altrimenti chapter =1
+    this.goToThisChapter = navParams.get('goToThisChapter');
+    console.log("goToThisChapter "+this.goToThisChapter);
+    if (this.goToThisChapter != undefined) {
+      this.chapter = this.goToThisChapter
+    } else {
+      this.chapter = 1;
+    }
+ }
 
 
 

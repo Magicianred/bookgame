@@ -3,6 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { GameData } from '../../providers/game-data';
 
+import { WinAlertPage } from '../win-alert/win-alert';
+import { LoseAlertPage } from '../lose-alert/lose-alert';
+
 
 
 @Component({
@@ -20,8 +23,13 @@ export class FightPage {
   public enemyAttack: any;
   public enemyLife: any;
   public winChapter: any;
-  public looseChapter: any;
+  public loseChapter: any;
   public enemySrc: any;
+
+  public winTitle: any;
+  public winText: any;
+  public loseTitle: any;
+  public loseText: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private gameData: GameData, private alertCtrl: AlertController) {
     this.fightParams = navParams.get('fightParams');
@@ -30,10 +38,11 @@ export class FightPage {
     this.enemyDiceOne = "-";
     this.enemyDiceTwo = "-";
     console.log(this.fightParams);
+    this.gameData.getLabelsName();
   }
 
   ionViewDidLoad() {
-    this.gameData.getLabelsName();
+    //this.gameData.getLabelsName();
     this.gameData.getSkillsStats();
     /* enemyName | enemyLife | enemyAttack | winChapter | loseChapter */
     this.characterLife = this.gameData.lifeValue;
@@ -41,10 +50,10 @@ export class FightPage {
     this.enemyLife = this.fightParams[1];
     this.enemyAttack = this.fightParams[2];    
     this.winChapter = this.fightParams[3];
-    this.looseChapter = this.fightParams[4];
+    this.loseChapter = this.fightParams[4];
     this.enemySrc = this.enemySrc = "../assets/img/charReady/" + this.enemyName +'.png'
   }
-
+/*
   presentAlert(message: string) {
   let alert = this.alertCtrl.create({
     //title: 'Low battery',
@@ -56,15 +65,17 @@ export class FightPage {
   alert.present();
   }
 
-  youWinAlert(winchapter: any) {
+  youWinAlert(winchapter: any, winTitle: any, winText: any) {
     let alert = this.alertCtrl.create({
-    title: "Title",
-    message: "Hai vinto!",
+    title: winTitle,
+    message: winText,
     buttons: [
       {
         text: 'Prosegui',
         role: 'cancel',
         handler: () => {
+          
+          this.navCtrl.push(WinAlertPage);
           console.log('prosegui verso '+winchapter);
         }
       }],
@@ -72,12 +83,6 @@ export class FightPage {
     });
     alert.present();
   }
-
-
-
-
-
-
 
   youLoseAlert() {
     let alert = this.alertCtrl.create({
@@ -87,7 +92,19 @@ export class FightPage {
     });
     //alert.setCssClass('loseAlert');
     alert.present();
-  } 
+  } */
+
+  goToWinAlertPage(winChapter: any){
+    this.navCtrl.push(WinAlertPage, {
+      goToThisChapter: winChapter
+    });
+  };
+
+  goToLoseAlertPage(loseChapter: any){
+    this.navCtrl.push(LoseAlertPage, {
+      //goToThisChapter: loseChapter
+    });
+  };
 
   throwTwoDices(){
     var firstDice: number = Math.floor(Math.random() * 6 + 1);
@@ -142,7 +159,8 @@ export class FightPage {
         //this.message = this.message + " Infliggi un danno di " + damage + " punti."
         //this.presentAlert(message);
         if (this.enemyLife <=0) {
-          this.youWinAlert(this.winChapter);
+          this.goToWinAlertPage(this.winChapter);
+          //this.youWinAlert(this.winChapter, this.winTitle, this.winText);
         }
       } if (characterFightAttack < enemyFightAttack) {
         console.log('subisci');
@@ -152,7 +170,8 @@ export class FightPage {
         //this.message = this.message + " Subisci un danno di " + damage + " punti."
         //this.presentAlert(message);
         if (this.characterLife <=0) {
-          this.youLoseAlert();
+          //this.goToLoseAlertPage(this.loseChapter);
+          //this.youLoseAlert();
         }
       } else {
         console.log("pareggio");

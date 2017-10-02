@@ -9,7 +9,16 @@
                 "fightMsg1": "Hai totalizzato ",
                 "fightMsg2": " punti. Il tuo avversario ne ha totalizzati ",
                 "fightMsg3": " punti di danno inflitti",
-                "fightMsg4": " punti di danno subiti"
+                "fightMsg4": " punti di danno subiti",
+                "alert": {
+                        "winTitle": "Vittoria!",
+                        "winText": "Hai sconfitto in combattimento il tuo nemico, prosegui nella storia",
+                        "loseTitle": "Sconfitta!",
+                        "loseText": "Sei stato sconfitto in combattimento, la tua avventura si conclude qui.",
+                        "keepAdventureText": "Continua la tua avventura",
+                        "startOverText": "Ricomincia l'avventura",
+                        "liveAgainText": "Usa la pozione dell'immortalità"
+                 }
     },
     "skills":{
             "swim": "nuotare",
@@ -30,13 +39,13 @@
                         "choice2":"FIGHT",
                         "goTo2" : "Fight",
                         "itemAcquired": [1, "necklace"],
-                        "fight": ["wolf", 15, 3, 5, 101] 
+                        "fight": ["wolf", 15, 2, 5, 101] 
                 },
                 "2": {  "chapter": 2,
                         "beforeTextGood": "BEFORE necklace acquired GOOD",
                         "beforeTextBad": "BEFORE necklace acquired BAD",
                         "text": "this is a text for chapter 2",
-                        "afterTextGood": "AFTER necklage good",
+                        "afterTextGood": "AFTER necklace good",
                         "afterTextBad": "AFTER necklace bad",
                         "choice1":"FIGHT", 
                         "goTo1" : "Fight",

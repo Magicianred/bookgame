@@ -1,0 +1,41 @@
+page-win-alert {
+    .winTitle{
+        margin:5vh 2vh;
+        text-align: center;
+        font-family: escargot;
+        font-size: 8vw;
+        text-transform: uppercase;
+        //color: map-get($colors, dark);
+        background: url("../assets/img/winAlertReady/winAlert.png");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            margin-top: 12vh !important;
+        }
+    }
+
+
+
+
+    .winText{
+        margin: 5vh 10vh;
+        text-align: center;
+    }
+
+    .goOnButton {
+        font-family: escargot;
+        font-size: 6vw;
+        text-transform: uppercase;
+        color: white;
+        background-color: map-get($colors, primary);
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,52 @@
+page-lose-alert {
+    .loseTitle{
+        margin:0 2vh 5vh 2vh;
+        text-align: center;
+        font-family: escargot;
+        font-size: 7vw;
+        text-transform: uppercase;
+        //color: map-get($colors, dark);
+        background: url("../assets/img/winAlertReady/loseAlert.png");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        height: 45vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            margin-top: 6vh !important;
+        }
+    }
+
+    .loseText{
+        margin: 5vh;
+        text-align: center;
+    }
+
+    .startAgainButton {
+        font-family: escargot;
+        font-size: 6vw;
+        text-transform: uppercase;
+        color: white;
+        background-color: map-get($colors, third);
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .newLifeButton {
+        margin-top: 2vh;
+        font-family: escargot;
+        font-size: 5vw;
+        text-transform: uppercase;
+        color: white;
+        background-color: map-get($colors, secondary);
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+

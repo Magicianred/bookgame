@@ -83,6 +83,13 @@ export class GameData {
   fightMsg2: any;
   fightMsg3: any;
   fightMsg4: any;
+  winTitle: any;
+  winText: any;
+  loseTitle: any;
+  loseText: any;
+  keepAdventureText: any;
+  startOverText: any;
+  liveAgainText: any;
 
   getLabelsName(){
     this.http.get(this.gameJson).map(res => res.json()).subscribe((data) => {
@@ -96,6 +103,15 @@ export class GameData {
       this.fightMsg2 = data ["labels"]["fightMsg2"];
       this.fightMsg3 = data ["labels"]["fightMsg3"];
       this.fightMsg4 = data ["labels"]["fightMsg4"];
+      //ALERT
+      this.winTitle = data["labels"]["alert"]["winTitle"];
+      console.log("winTitle FUNCION"+this.winTitle);
+      this.winText = data["labels"]["alert"]["winText"];
+      this.loseTitle = data["labels"]["alert"]["loseTitle"];
+      this.loseText = data["labels"]["alert"]["loseText"];
+      this.keepAdventureText = data["labels"]["alert"]["keepAdventureText"];
+      this.startOverText = data["labels"]["alert"]["startOverText"];
+      this.liveAgainText = data["labels"]["alert"]["liveAgainText"];
     });
   }
 

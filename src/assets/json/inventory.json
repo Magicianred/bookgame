@@ -38,5 +38,19 @@
     "sellText": "Vendi a 30$",
     "addLife": 4,
     "funcionAddLife": "<button (tap)=addLife(4)>Usa</button>"
+  },
+  {
+    "id": "immortalpotion",
+    "name": "Pozione salutare",
+    "description": "Usa la pozione",
+    "jpg": "immortalPotion.png",
+    "superPowerText": "Bere la pozione ti riporterà in vita",
+    "useText": "Bevi",
+    "useStat": "life",
+    "useStatValue": 12,
+    "sellPrice": 90,
+    "sellText": "Vendi a 90$",
+    "addLife": 12,
+    "funcionAddLife": "<button (tap)=addLife(12)>Usa</button>"
   }
 ]

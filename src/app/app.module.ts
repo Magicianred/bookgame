@@ -19,6 +19,8 @@ import { ChooseSkillsPage } from '../pages/choose-skills/choose-skills';
 import { Cap1Page } from '../pages/cap1/cap1';
 import { CharacterPage } from '../pages/character/character';
 import { FightPage } from '../pages/fight/fight';
+import { WinAlertPage } from '../pages/win-alert/win-alert';
+import { LoseAlertPage } from '../pages/lose-alert/lose-alert';
 import { InventoryPage } from '../pages/inventory/inventory';
 import { LairPage } from '../pages/lair/lair';
 import { SettingsPage } from '../pages/settings/settings';
@@ -38,6 +40,8 @@ import { SettingsPage } from '../pages/settings/settings';
     Cap1Page,
     CharacterPage,
     FightPage,
+    WinAlertPage,
+    LoseAlertPage,
     InventoryPage,
     LairPage,
     SettingsPage
@@ -56,6 +60,8 @@ import { SettingsPage } from '../pages/settings/settings';
     Cap1Page,
     CharacterPage,
     FightPage,
+    WinAlertPage,
+    LoseAlertPage,
     InventoryPage,
     LairPage,
     SettingsPage

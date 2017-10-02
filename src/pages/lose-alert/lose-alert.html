@@ -1,0 +1,10 @@
+<ion-content padding>
+    <div class="loseTitle">
+      <p>{{this.gameData.loseTitle}}</p>
+    </div>        
+    <p class="loseText">{{this.gameData.loseText}}</p>
+    <div class="startAgainButton" (tap)="startAgain()">{{this.gameData.startOverText}}</div>
+
+    <div *ngIf="immortalPotionAcquired" class="newLifeButton" [class.hide]='!immortalPotionAcquired' (tap)=goOnReading()>{{this.gameData.liveAgainText}}</div>
+    <!--<div class="newLifeButton" (tap)="goOnReading()">{{this.gameData.liveAgainText}}</div>-->
+  </ion-content>
