@@ -20,6 +20,14 @@
                         "liveAgainText": "Usa la pozione dell'immortalità"
                  }
     },
+    "shaiChararcter":{
+        "charDescription": "Shai è una giovane umana",
+        "charLife": 12,
+        "charAttack": 6,
+        "charMoney": 1,
+        "charReputation": 0,
+        "charButtonText": "Scegli Shai"
+        },
     "skills":{
             "swim": "nuotare",
             "hide": "mimetismo",

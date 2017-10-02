@@ -41,8 +41,8 @@
   },
   {
     "id": "immortalpotion",
-    "name": "Pozione salutare",
-    "description": "Usa la pozione",
+    "name": "Pozione dell'immortalità",
+    "description": "Bere la pozione può darti 12 punti vita o farti risorgere dopo una sconfitta in uno scontro.",
     "jpg": "immortalPotion.png",
     "superPowerText": "Bere la pozione ti riporterà in vita",
     "useText": "Bevi",

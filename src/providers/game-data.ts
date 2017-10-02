@@ -43,6 +43,39 @@ export class GameData {
     this.inventoryJson = this.inventory_it;
   }
 
+  charDescription: any;
+  charLife: any;
+  charAttack: any;
+  charMoney: any;
+  charReputation: any;
+  charButtonText: any;
+
+  getCharachtersStats(){
+    this.http.get(this.gameJson).map(res => res.json()).subscribe((data) => {
+      this.charDescription = data["shaiChararcter"]["charDescription"];
+      this.charLife = data["shaiChararcter"]["charLife"];
+      this.charAttack = data["shaiChararcter"]["charAttack"];
+      this.charMoney = data["shaiChararcter"]["charMoney"];
+      this.charReputation = data["shaiChararcter"]["charReputation"];
+      this.charButtonText = data["shaiChararcter"]["charButtonText"];
+    });
+  }
+
+  swim: any;
+  hide: any;
+  track: any;
+  talk: any;
+
+getSkillChoices(){
+  this.http.get(this.gameJson).map(res => res.json()).subscribe((data) => {
+    this.swim = data["skills"]["swim"];
+    this.hide = data["skills"]["hide"];
+    this.track = data["skills"]["track"];
+    this.talk = data["skills"]["talk"];
+  });
+}
+
+
   getHome() {
     this.storage.get("language").then((data) => {
       switch (data) {
@@ -105,7 +138,6 @@ export class GameData {
       this.fightMsg4 = data ["labels"]["fightMsg4"];
       //ALERT
       this.winTitle = data["labels"]["alert"]["winTitle"];
-      console.log("winTitle FUNCION"+this.winTitle);
       this.winText = data["labels"]["alert"]["winText"];
       this.loseTitle = data["labels"]["alert"]["loseTitle"];
       this.loseText = data["labels"]["alert"]["loseText"];

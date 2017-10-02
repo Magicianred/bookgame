@@ -1,20 +1,11 @@
-<!--
-  Generated template for the ChooseCharacter page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-<ion-content>
+<ion-content padding>
   <div>
-    <h3>TROLL</h3>
-    <p>La razza dei troll è da tempo soggiogata al potere degli elfi. Relegati al ruolo di ubbidienti servi volontari o schiavi ai lavori forzati, i troll sono ormai solo uno spauracchio per bambini. Ma qualcosa si muove tra le paludi e nelle caverne dove questa razza riposa. La resistenza si sta compattando e giovani troll si arruolano per combattere l'opressore elfico e riportare la razza ai fasti di un tempo con la forza bruta.</p>
-    <p>IMPIEGO: scavatore presso le miniere</p>
-    <h4>STATISTICHE INIZIALI</h4>
-    <p>VITA: 8</p>
-    <p>ATTACCO: 5</p>
-    <p><ion-icon name="ribbon-b"></ion-icon> REPUTAZIONE: 1</p>
-    <p><ion-icon name="cash"></ion-icon> SOLDI: 0</p>
-    <button (click)='chooseTroll()' ion-button>Scelgo il Troll</button>
+    <p class="charTitle">Shai</p>
+    <p>{{this.gameData.charDescription}}</p>
+    <p class="label">{{this.gameData.lifeLabel}}: <span class="value">{{this.gameData.charLife}}</span></p>
+    <p class="label">{{this.gameData.attackLabel}}: <span class="value">{{this.gameData.charAttack}}</span></p>
+    <p class="label">{{this.gameData.reputationLabel}}: <span class="value">{{this.gameData.charReputation}}</span></p>
+    <p class="label">{{this.gameData.moneyLabel}}: <span class="value">{{this.gameData.charMoney}}</span></p>
+    <div class="chooseButton" (tap)=chooseChar()>{{this.gameData.charButtonText}}</div>
   </div>
 </ion-content>

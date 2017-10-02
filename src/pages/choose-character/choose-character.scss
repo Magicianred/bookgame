@@ -1,3 +1,41 @@
 page-choose-character {
+    p{
+        margin: 2vh;
+    }
+    .charTitle{
+        margin:2vh;
+        text-align: center;
+        font-family: escargot;
+        font-size: 8vw;
+        text-transform: uppercase;
+    }
 
+
+    .label{
+        font-family: escargot;
+        font-size: 6vw;
+        color: map-get($colors, third);
+        margin-left: 10vw;
+    }
+    .value {
+        color: map-get($colors, primary) !important;
+    }
+
+    .winText{
+        margin: 5vh 10vh;
+        text-align: center;
+    }
+
+    .chooseButton {
+        margin: 10vh 0;
+        font-family: escargot;
+        font-size: 6vw;
+        text-transform: uppercase;
+        color: white;
+        background-color: map-get($colors, primary);
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
