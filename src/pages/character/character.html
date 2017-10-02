@@ -5,17 +5,17 @@
     <img src="assets/img/charPageReady/char.png">
   </div>
   <div class="columns">
-    <div class="label">
-      <p>{{this.gameData.lifeLabel}}:</p>
-      <p>{{this.gameData.attackLabel}}:</p>
-      <p>{{this.gameData.moneyLabel}}:</p>
-      <p>{{this.gameData.reputationLabel}}:</p>
+    <div>
+      <div class="label">{{this.gameData.lifeLabel}}:</div>
+      <div class="label">{{this.gameData.attackLabel}}:</div>
+      <div class="label">{{this.gameData.moneyLabel}}:</div>
+      <div class="label">{{this.gameData.reputationLabel}}:</div>
     </div>
-    <div class="value"> 
-      <p >{{this.gameData.lifeValue}}</p>
-      <p >{{this.gameData.attackValue}}</p>
-      <p class="value">{{this.gameData.moneyValue}}</p>
-      <p class="value">{{this.gameData.reputationValue}}</p>
+    <div> 
+      <div class="value">{{this.gameData.lifeValue}}</div>
+      <div class="value">{{this.gameData.attackValue}}</div>
+      <div class="value">{{this.gameData.moneyValue}}</div>
+      <div class="value">{{this.gameData.reputationValue}}</div>
     </div>
     <div class="extra">
       <div class="inventary" (click)="goToInventory()"></div>

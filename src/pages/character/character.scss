@@ -25,14 +25,18 @@ page-character {
         color: map-get($colors, third);
         display: flex;
         flex-direction: column;
+        margin: 0 0 0 10vw;
     }
     .value {
-        width: 25vw;
+        width: 10vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-content: center;
         color: map-get($colors, forth);
         font-weight: bold;
+        text-align: center;
+        margin-right: 5vw;
     }
 
     .stats p:first-child {
@@ -52,16 +56,16 @@ page-character {
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
-        width: 25vw;
-        height: 25vw;
+        width: 20vw;
+        height: 20vw;
     }
     .lair{
         background: url('../assets/img/charPageReady/lair.png');
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
-        width: 25vw;
-        height: 25vw;
+        width: 20vw;
+        height: 20vw;
     }
 
     .skillsDisplay{
