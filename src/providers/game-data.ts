@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+//import { Globalization } from '@ionic-native/globalization';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -16,10 +17,12 @@ export class GameData {
   inventory_en = 'assets/json/inventory_en.json';
   gameJson: any;
   inventoryJson: any;
+  characterJson = 'assets/json/character.json';
 
   creditsButton: any;
   rulesButton: any;
   settingsButton: any;
+  loadButton: any;
 
   text: string;
   beforeTextGood: string;
@@ -35,6 +38,7 @@ export class GameData {
   fight: any;
   itemAcquired: any;
   skillAcquired: any;
+  statAcquired: any;
   chapter: number;
 
   constructor(public http: Http, public storage: Storage) {
@@ -90,6 +94,8 @@ getSkillChoices(){
 }
 
 
+/********************* HOME FUNCTIONS  */
+
   getHome() {
     this.storage.get("language").then((data) => {
       switch (data) {
@@ -120,6 +126,27 @@ getSkillChoices(){
     });
   }
 
+  
+  public deviceLang: string;
+  getDeviceLang(){
+    this.globalization.getPreferredLanguage()
+    .then(res => function (res) {
+        if (res = "IT" || "it-IT" || "it-it") {
+          console.log("la lingua di sistema è italiano"+ res)
+        } else {
+          console.log("la lingua di sistema non è italiano"+ res)
+        }
+    })
+    .catch(e => console.log("Error in getting device language "+e));
+  }
+
+
+
+  swimLabel; trackLabel; hideLabel; talkLabel : any;
+  /*trackLabel: any;
+  hideLabel: any;
+  talkLabel: any;
+*/
   lifeLabel: any;
   attackLabel: any;
   moneyLabel: any;
@@ -140,6 +167,12 @@ getSkillChoices(){
 
   getLabelsName(){
     this.http.get(this.gameJson).map(res => res.json()).subscribe((data) => {
+      this.swimLabel = data["skills"]["swim"];
+      console.log("this.swimLabel "+this.swimLabel);
+      this.hideLabel = data["skills"]["hide"];
+      this.trackLabel = data["skills"]["track"];
+      this.talkLabel = data["skills"]["talk"];
+
       this.lifeLabel = data["labels"]["life"];
       this.attackLabel = data["labels"]["attack"];
       this.moneyLabel = data["labels"]["money"];

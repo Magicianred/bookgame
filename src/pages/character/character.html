@@ -22,7 +22,7 @@
       <div class="lair" (click)="goToLair()"></div>
     </div>
   </div>
-  <div class="skillsDisplay">
+  <!-- <div class="skillsDisplay">
     <div [ngSwitch]=swim>
       <div class="skill" *ngSwitchCase='false'>
         <img src="../assets/img/charPageReady/swim_off.png" />
@@ -53,6 +53,49 @@
       </div>
       <div class="skill" *ngSwitchCase='true'>
         <img src="../assets/img/charPageReady/talk.png" />
+      </div>
+    </div>
+  </div>
+</ion-content> -->
+<div class="skillsDisplay">
+    <div [ngSwitch]=this.gameData.swim>
+      <div class="skill" *ngSwitchCase='false'>
+        <img [src]='this.src+"swim_off.png"' />
+        <p class="smallLabel off">{{this.gameData.swimLabel}}</p>
+      </div>
+      <div class="skill" *ngSwitchCase='true'>
+        <img [src]='this.src+"swim.png"' />
+        <p class="smallLabel">{{this.gameData.swimLabel}}</p>
+      </div>
+    </div>
+    <div [ngSwitch]=this.gameData.hide>
+      <div class="skill" *ngSwitchCase='false'>
+        <img [src]='this.src+"hide_off.png"' />
+        <p class="smallLabel off">{{this.gameData.hideLabel}}</p>
+      </div>
+      <div class="skill" *ngSwitchCase='true'>
+        <img [src]='this.src+"hide.png"' />
+        <p class="smallLabel">{{this.gameData.hideLabel}}</p>
+      </div>
+    </div>
+    <div [ngSwitch]=this.gameData.track>
+      <div class="skill" *ngSwitchCase='false'>
+        <img [src]='this.src+"track_off.png"' />
+        <p class="smallLabel off">{{this.gameData.trackLabel}}</p>
+      </div>
+      <div class="skill" *ngSwitchCase='true'>
+        <img [src]= this.src+"track.png" />
+        <p class="smallLabel">{{this.gameData.trackLabel}}</p>
+      </div>
+    </div>
+    <div [ngSwitch]=this.gameData.talk>
+      <div class="skill" *ngSwitchCase='false'>
+        <img [src]='this.src+"talk_off.png"' />
+        <p class="smallLabel off">{{this.gameData.talkLabel}}</p>
+      </div>
+      <div class="skill" *ngSwitchCase='true'>
+        <img [src]='this.src+"talk.png"' />
+        <p class="smallLabel">{{this.gameData.talkLabel}}</p>
       </div>
     </div>
   </div>

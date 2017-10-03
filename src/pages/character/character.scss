@@ -7,7 +7,7 @@ page-character {
 
     .columns {
         display: flex;
-        height: 30vh;
+        height: 27vh;
         font-family: Escargot;
         font-size: 7vw;
     }
@@ -26,6 +26,9 @@ page-character {
         display: flex;
         flex-direction: column;
         margin: 0 0 0 10vw;
+        & p {
+            margin: 0 !important;
+        }
     }
     .value {
         width: 10vw;
@@ -37,6 +40,9 @@ page-character {
         font-weight: bold;
         text-align: center;
         margin-right: 5vw;
+        & p {
+            margin: 0 !important;
+        }
     }
 
     .stats p:first-child {
@@ -75,5 +81,19 @@ page-character {
     }
     .skill{
         width: 20vw;
+    }
+
+    .smallLabel {
+        font-family: escargot;
+        margin: 0 !important;
+        padding: 0!important;
+        position: relative;
+        bottom: 3vw;
+        display: flex;
+        justify-content: center;
+        color: map-get($colors, third);
+    }
+    .off {
+        color: map-get($colors, fourth) !important;
     }
 }
