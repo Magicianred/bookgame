@@ -142,11 +142,11 @@
         "noMoneyButtonText": "Torna indietro",
         "armor": {
                 "price": "15",
-                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
-                "useStat1": "attack",
-                "useStatValue": 4,
-                "useStat2": "life",
-                "useStatValue2": 1
+                "text": "Acquistando a 15$ l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
+                "stat1": "attack",
+                "statValue1": 4,
+                "stat2": "life",
+                "statValue2": 1
         },
         "treasure": {
                 "price": "15",

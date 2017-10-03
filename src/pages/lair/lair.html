@@ -1,20 +1,37 @@
-<back-bar></back-bar>
 <ion-content>
+  <back-bar></back-bar>
   <div id="bg"></div>
   <div id="objects">
-    <div [class.hide]='!armorValue'id="armor" ></div>
-    <div [class.hide]='armorValue' id="armorOff" (tap)=armor()></div>
+    <!-- ARMOR -->
+    <div *ngIf="armorValue" id="armor" ></div>
+    <div *ngIf="!armorValue" id="armorOff" (tap)="getObjectDetails('armor')"></div>
+    <!-- TREASURE -->
+    <div *ngIf="treasureValue" id="treasure" ></div>
+    <div *ngIf="!treasureValue" id="treasureOff" (tap)="getObjectDetails('treasure')"></div>
+    <!-- BED -->
+    <div *ngIf="bedValue" id="bed" ></div>
+    <div *ngIf="!bedValue" id="bedOff" (tap)="getObjectDetails('bed')"></div>
+    <!-- WARDROBE -->
+    <div *ngIf="wardrobeValue" id="wardrobe" ></div>
+    <div *ngIf="!wardrobeValue" id="wardrobeOff" (tap)="getObjectDetails('wardrobe')"></div>
+    <!-- TABLE -->
+    <div *ngIf="tableValue" id="table" ></div>
+    <div *ngIf="!tableValue" id="tableOff" (tap)="getObjectDetails('table')"></div>
+    <!-- BOOKSHELVES -->
+    <div *ngIf="bookshelvesValue" id="bookshelves" ></div>
+    <div *ngIf="!bookshelvesValue" id="bookshelvesOff" (tap)="getObjectDetails('bookshelves')"></div>
+
+
+
+
     <div *ngIf="alertValue" class="alert" >
         <p>{{this.alertText}}</p>
-        <div class="greenButton" (tap)="buy(this.price, this.stat1, this.stat1Value, this.stat2, this.stat2Value)">{{this.gameData.buyText}}</div>
+        <div class="greenButton" (tap)="buy(this.price, this.stat1, this.statValue1, this.stat2, this.statValue2, this.objectName)">{{this.gameData.buyText}}</div>
         <div class="button" (tap)="dismissAlert()">{{this.gameData.closeText}}</div>
     </div>
     <div *ngIf="noMoneyAlert" class="alertNoMoney" >
-        <p>{{this.alertTextNoMoney}}</p>
-        <div class="whiteButton" (tap)="dismissAlertNoMoney()">{{this.gameDatanoMoneyText}}</div>
+        <p>{{this.gameData.noMoneyText}}</p>
+        <div class="whiteButton" (tap)="dismissAlertNoMoney()">{{this.gameData.noMoneyButtonText}}</div>
     </div>
-    <div id="treasure" (tap)=treasure()></div>
-    <div id="bookshelves" (tap)=bookshelves()></div>
-    <div id="table" (tap)=table()></div>
   </div>
 </ion-content>

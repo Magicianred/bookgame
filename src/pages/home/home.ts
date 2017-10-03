@@ -109,7 +109,7 @@ export class HomePage {
 
       //set all liar objects to false
       this.storage.set("armor", false);
-      this.storage.set("armor", false);
+      this.storage.set("treasure", false);
       this.storage.set("table", false);
       this.storage.set("bookshelves", false);
       this.storage.set("bed", false);
