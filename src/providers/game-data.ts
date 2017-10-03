@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
-//import { Globalization } from '@ionic-native/globalization';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -125,22 +124,6 @@ getSkillChoices(){
       this.settingsButton = data["settings"];
     });
   }
-
-  
-  public deviceLang: string;
-  getDeviceLang(){
-    this.globalization.getPreferredLanguage()
-    .then(res => function (res) {
-        if (res = "IT" || "it-IT" || "it-it") {
-          console.log("la lingua di sistema è italiano"+ res)
-        } else {
-          console.log("la lingua di sistema non è italiano"+ res)
-        }
-    })
-    .catch(e => console.log("Error in getting device language "+e));
-  }
-
-
 
   swimLabel; trackLabel; hideLabel; talkLabel : any;
   /*trackLabel: any;
