@@ -65,13 +65,26 @@ export class GameData {
   hide: any;
   track: any;
   talk: any;
+  swimText: any;
+  hideText: any;
+  trackText: any;
+  talkText: any;
+  chooseSkillText: any;
+  chooseSkillTitle: any;
 
+//get all the text for the chooseSkill page
 getSkillChoices(){
   this.http.get(this.gameJson).map(res => res.json()).subscribe((data) => {
     this.swim = data["skills"]["swim"];
+    this.swimText = data["skills"]["swimText"];
     this.hide = data["skills"]["hide"];
+    this.hideText = data["skills"]["hideText"];
     this.track = data["skills"]["track"];
+    this.trackText = data["skills"]["trackText"];
     this.talk = data["skills"]["talk"];
+    this.talkText = data["skills"]["talkText"];
+    this.chooseSkillText = data["skills"]["chooseSkillText"];
+    this.chooseSkillTitle = data["skills"]["chooseSkillTitle"];    
   });
 }
 
@@ -281,11 +294,6 @@ getInventoryData(){
       console.log('name '+this.nameItem);*/
     });
   }
-
-  hide: any;
-  swim: any;
-  track: any;
-  talk: any;
 
   getSkillsStats(){
     this.storage.get('hide').then((data) => {

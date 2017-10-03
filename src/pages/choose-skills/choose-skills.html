@@ -1,25 +1,50 @@
+
 <ion-content padding>
-  <p>Seleziona le tue abilità con attenzione. Alcune le potrai acquisire durante la storia se farai le scelte corrette, altre le potrai acquisire solo comprando ed utilizzando oggetti e pezzi d'arredamento nella tua tana, altre ancora sono disponibili solo in questa schermata. Pensa bene e non prendere questa decisione alla leggera perchè potrebbe influenzare il corso della tua storia</p>
-  <ion-list radio-group [(ngModel)]="skills">
-  <ion-item>
-    <ion-label>Nuotare</ion-label>
-    <ion-radio value="swim" checked="true"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-label>Seguire le tracce</ion-label>
-    <ion-radio value="track"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-label>Nascondersi</ion-label>
-    <ion-radio value="hide" ></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-label>Parlantina</ion-label>
-    <ion-radio value="talk"></ion-radio>
-    <p>Ti permetterà di convincere con più facilità le persone delle tue idee, aprendoti strade altrimenti non percorribili.</p>
-  
-  </ion-item>
-  <button ion-button (click)="setSkills(skills)">button </button>
-  <button ion-button (click)="goToPage(cap1Page)">Inizia </button>
-</ion-list>
+  <p class="title">{{this.gameData.chooseSkillTitle}}</p>
+  <p>{{this.gameData.chooseSkillText}}</p>
+  <div class="column">
+    <div class="skill" (tap)=selectSwim() [ngClass]="{'skillSelected': this.swimSelected }">
+      <div class="row">
+        <img class="imgSkill" src='assets/img/charPageReady/swim.png' />
+        <div class="column">
+          <p class="skillTitle">{{this.gameData.swimLabel}}</p>
+          <p>{{this.gameData.swimText}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="skill" (tap)=selectHide() [ngClass]="{'skillSelected': this.hideSelected }">
+      <div class="row">
+        <img class="imgSkill" src='assets/img/charPageReady/hide.png' />
+        <div class="column">
+          <p class="skillTitle">{{this.gameData.hideLabel}}</p>
+          <p>{{this.gameData.hideText}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="skill" (tap)=selectTrack() [ngClass]="{'skillSelected': this.trackSelected }">
+      <div class="row">
+        <img class="imgSkill" src='assets/img/charPageReady/track.png' />
+        <div class="column">
+          <p class="skillTitle">{{this.gameData.trackLabel}}</p>
+          <p>{{this.gameData.trackText}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="skill" (tap)=selectTalk() [ngClass]="{'skillSelected': this.talkSelected }">
+      <div class="row">
+        <img class="imgSkill" src='assets/img/charPageReady/talk.png' />
+        <div class="column">
+          <p class="skillTitle">{{this.gameData.talkLabel}}</p>
+          <p>{{this.gameData.talkText}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <p>{{this.gameData.selectedSkillText}}</p>
+  <p class="selectedSkill">{{this.selectedSkill}}</p>
+  -->
+  <div class="button" (tap)=confirm()>Conferma</div>
+
 </ion-content>
+

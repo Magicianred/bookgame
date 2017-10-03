@@ -22,6 +22,44 @@ export class ChooseSkillsPage {
     console.log('ionViewDidLoad ChooseSkillsPage');
   }
 
+  public selectedSkill = "";
+  public swimSelected = false;
+  public talkSelected = false;
+  public hideSelected = false;
+  public trackSelected = false;
+
+  selectSwim(){
+    console.log("selectSwim function");
+    this.selectedSkill = "swim";
+    this.swimSelected = true;
+    this.hideSelected = false;
+    this.talkSelected = false;
+    this.trackSelected = false;
+    console.log(this.swimSelected);
+  }
+  selectHide(){
+    this.selectedSkill = "hide";
+    this.swimSelected = false;
+    this.hideSelected = true;
+    this.talkSelected = false;
+    this.trackSelected = false;
+  }
+  selectTrack(){
+    this.selectedSkill = "track";
+    this.swimSelected = false;
+    this.hideSelected = false;
+    this.talkSelected = false;
+    this.trackSelected = true;
+  }
+  selectTalk(){
+    this.selectedSkill = "talk";
+    this.swimSelected = false;
+    this.hideSelected = false;
+    this.talkSelected = true;
+    this.trackSelected = false;
+  }
+
+  /*
   setSkills(variable){
     this.storage.set('swim', false);   //SWIM
     this.storage.set('track', false);  //TRACK
@@ -40,7 +78,7 @@ export class ChooseSkillsPage {
             console.log('hide ', val);
           }));
   }
-
+*/
   goToPage(page: any) {
     this.navCtrl.push(page);
   }
