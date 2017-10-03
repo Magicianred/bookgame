@@ -2,6 +2,7 @@ page-lair {
     back-bar {
         position: absolute;
         right: 0;
+        z-index: 10;
     }
     #bg{
         background-image: url('../assets/img/lairReady/bg.jpg');

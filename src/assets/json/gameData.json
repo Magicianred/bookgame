@@ -142,51 +142,51 @@
         "noMoneyButtonText": "Torna indietro",
         "armor": {
                 "price": "15",
-                "text": "Acquistando a 15$ l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
+                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
                 "stat1": "attack",
                 "statValue1": 4,
                 "stat2": "life",
                 "statValue2": 1
         },
         "treasure": {
-                "price": "15",
-                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
-                "useStat1": "attack",
-                "useStatValue": 4,
-                "useStat2": "life",
-                "useStatValue2": 1
+                "price": "5",
+                "text": "Il forziere è il posto perfetto per conservare armi. Ti fa guadagnare 1 punto attacco e 1 punto vita",
+                "stat1": "attack",
+                "statValue1": 1,
+                "stat2": "life",
+                "statValue2": 1
         },
         "bed": {
                 "price": "15",
-                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
-                "useStat1": "attack",
-                "useStatValue": 4,
-                "useStat2": "life",
-                "useStatValue2": 1
+                "text": "Il letto è fondamentale per riacquistare le energie eti fa guadagnare 5 punti vita. Con un aspetto più riposato guadagni anche 1 punto reputazione",
+                "stat1": "life",
+                "statValue1": 5,
+                "stat2": "reputation",
+                "statValue2": 1
         },
         "wardrobe": {
-                "price": "15",
-                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
-                "useStat1": "attack",
-                "useStatValue": 4,
-                "useStat2": "life",
-                "useStatValue2": 1
+                "price": "5",
+                "text": "L'armadio e il suo guardaroba migliorano la tua reputazione di 2 punti. L'armadio contiene anche una cintura con un piccolo coltello nascosto che fa aumentare il tuo attacco di 1 punto",
+                "stat1": "reputation",
+                "statValue1": 2,
+                "stat2": "attack",
+                "statValue2": 1
         },
         "table": {
                 "price": "15",
-                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
-                "useStat1": "attack",
-                "useStatValue": 4,
-                "useStat2": "life",
-                "useStatValue2": 1
+                "text": "Il punto di ritrovo per te e i tuoi amici. Un gruppo così affiatato e fedele ti fa guadagnare 4 punti reputazione e 2 punti vita, perchè i tuoi amici sono sempre pronti a coprirti le spalle e aiutarti nel momento del bisogno",
+                "stat1": "reputation",
+                "statValue1": 4,
+                "stat2": "life",
+                "statValue2": 2
         },
-        "bookshelve": {
-                "price": "15",
-                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
-                "useStat1": "attack",
-                "useStatValue": 4,
-                "useStat2": "life",
-                "useStatValue2": 1
+        "bookshelves": {
+                "price": "8",
+                "text": "La conoscenza è potere. Tra i volumi della tua libreria ci sono antichi testi sull'arte della guerra e del combattimento che ti fanno guadagnare 2 punti attacco e 2 punti reputazione",
+                "stat1": "attack",
+                "statValue1": 2,
+                "stat2": "reputation",
+                "statValue2": 2
         }      
     },
     "characterFeatures": ["life", "attack", "money", "reputation" ]

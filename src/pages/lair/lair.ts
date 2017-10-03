@@ -88,9 +88,13 @@ export class LairPage {
     this.alertText = this.gameData[name]["text"];
     this.price = this.gameData[name]["price"];
     this.stat1 =  this.gameData[name]["stat1"];
+    //console.log("this.stat1 "+this.stat1)
     this.statValue1 = this.gameData[name]["statValue1"];
+    //console.log("this.statValue1 "+this.statValue1)
     this.stat2 = this.gameData[name]["stat2"];
+    //console.log("this.stat2 "+this.stat2)
     this.statValue2 = this.gameData[name]["statValue2"]; 
+    //console.log("this.statValue2 "+this.statValue2)
     this.objectName = name;
     this.checkIfIHaveEnoughMoney(this.price);
   }
@@ -135,6 +139,9 @@ export class LairPage {
       }
     this.storage.set(object, true).then(() => {
       console.log("val1 "+value1)
+      console.log("val2 "+value2)
+      console.log("stat1 "+stat1)
+      console.log("stat2 "+stat2)
       this.gameData.updateStat(stat1, value1);
       this.gameData.updateStat(stat2, value2);
       this.gameData.updateMoney("-", price);
