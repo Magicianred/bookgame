@@ -135,5 +135,59 @@
         "lair": false,
         "necklace": false
     },
+    "lair": {
+        "buyText": "Lo compro!",
+        "closeText": "Nah... meglio di no",
+        "noMoneyText": "Mi dispiace, non hai abbastanza soldi per acquistare quest'oggetto",
+        "noMoneyButtonText": "Torna indietro",
+        "armor": {
+                "price": "15",
+                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
+                "useStat1": "attack",
+                "useStatValue": 4,
+                "useStat2": "life",
+                "useStatValue2": 1
+        },
+        "treasure": {
+                "price": "15",
+                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
+                "useStat1": "attack",
+                "useStatValue": 4,
+                "useStat2": "life",
+                "useStatValue2": 1
+        },
+        "bed": {
+                "price": "15",
+                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
+                "useStat1": "attack",
+                "useStatValue": 4,
+                "useStat2": "life",
+                "useStatValue2": 1
+        },
+        "wardrobe": {
+                "price": "15",
+                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
+                "useStat1": "attack",
+                "useStatValue": 4,
+                "useStat2": "life",
+                "useStatValue2": 1
+        },
+        "table": {
+                "price": "15",
+                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
+                "useStat1": "attack",
+                "useStatValue": 4,
+                "useStat2": "life",
+                "useStatValue2": 1
+        },
+        "bookshelve": {
+                "price": "15",
+                "text": "Acquistando l'armatura potrai esercitarti a casa ed otterai 4 punti in più per l'attacco e 1 punto in più di vita",
+                "useStat1": "attack",
+                "useStatValue": 4,
+                "useStat2": "life",
+                "useStatValue2": 1
+        }      
+    },
     "characterFeatures": ["life", "attack", "money", "reputation" ]
 }

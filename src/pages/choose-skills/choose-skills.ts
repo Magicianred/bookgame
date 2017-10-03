@@ -79,6 +79,12 @@ export class ChooseSkillsPage {
           }));
   }
 */
+
+  confirm(){
+    this.storage.set(this.selectedSkill, true);
+    this.goToPage(Cap1Page);
+  }
+   
   goToPage(page: any) {
     this.navCtrl.push(page);
   }

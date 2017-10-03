@@ -106,6 +106,15 @@ export class HomePage {
       this.storage.set('acquiredhealthkit', true);
       this.storage.set('acquiredimmortalpotion', true);
       var test = this.storage.get('acquirednecklace');
+
+      //set all liar objects to false
+      this.storage.set("armor", false);
+      this.storage.set("armor", false);
+      this.storage.set("table", false);
+      this.storage.set("bookshelves", false);
+      this.storage.set("bed", false);
+      this.storage.set("wardrobe", false);
+
       console.log('acquirednecklace'+test);
       return test
   }

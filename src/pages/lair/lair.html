@@ -1,18 +1,20 @@
-<!--
-  Generated template for the Lair page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>lair</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<back-bar></back-bar>
+<ion-content>
+  <div id="bg"></div>
+  <div id="objects">
+    <div [class.hide]='!armorValue'id="armor" ></div>
+    <div [class.hide]='armorValue' id="armorOff" (tap)=armor()></div>
+    <div *ngIf="alertValue" class="alert" >
+        <p>{{this.alertText}}</p>
+        <div class="greenButton" (tap)="buy(this.price, this.stat1, this.stat1Value, this.stat2, this.stat2Value)">{{this.gameData.buyText}}</div>
+        <div class="button" (tap)="dismissAlert()">{{this.gameData.closeText}}</div>
+    </div>
+    <div *ngIf="noMoneyAlert" class="alertNoMoney" >
+        <p>{{this.alertTextNoMoney}}</p>
+        <div class="whiteButton" (tap)="dismissAlertNoMoney()">{{this.gameDatanoMoneyText}}</div>
+    </div>
+    <div id="treasure" (tap)=treasure()></div>
+    <div id="bookshelves" (tap)=bookshelves()></div>
+    <div id="table" (tap)=table()></div>
+  </div>
 </ion-content>

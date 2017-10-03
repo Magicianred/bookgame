@@ -1,3 +1,83 @@
 page-lair {
+    #bg{
+        background-image: url('../assets/img/lairReady/bg.jpg');
+        background-size: cover;
+        background-position: center center;
+        width:100vw;
+        height: 100vh;
+    }
+    #objects{
+        width:100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+    }
+
+    .alert {
+        background-color: rgba(0, 0, 0, 0.85);
+        opacity: 80%;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        padding: 30vh 10vw;
+        color: white;
+    }
+
+    .alertNoMoney {
+        background-color: rgba(#950539, 0.65);
+        opacity: 80%;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        padding: 30vh 10vw;
+        color: white;
+    }
+
+    #armor{
+        background-image: url('../assets/img/lairReady/armor.png');
+        width: 20vw;
+        height: 6vh;
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        top: 17vh;
+        right: 2vw;
+    }
+    #armorOff{
+        background-image: url('../assets/img/lairReady/armorOff.png');
+        width: 20vw;
+        height: 6vh;
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        top: 17vh;
+        right: 2vw;
+    }
+    #treasure{
+        background-image: url('../assets/img/lairReady/treasure.png');
+        width: 8vh;
+        height: 9vh;
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        top: 30vh;
+        right: 3vw;
+    }
+    #treasureOff{
+        background-image: url('../assets/img/lairReady/treasureOff.png');
+        width: 8vh;
+        height: 9vh;
+        background-size: cover;
+        background-position: center center;
+        position: absolute;
+        top: 30vh;
+        right: 3vw;
+    }
 
 }

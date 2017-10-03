@@ -54,6 +54,7 @@ export class GameData {
     this.http.get(this.gameJson).map(res => res.json()).subscribe((data) => {
       this.charDescription = data["shaiChararcter"]["charDescription"];
       this.charLife = data["shaiChararcter"]["charLife"];
+      console.log(this.charLife)
       this.charAttack = data["shaiChararcter"]["charAttack"];
       this.charMoney = data["shaiChararcter"]["charMoney"];
       this.charReputation = data["shaiChararcter"]["charReputation"];
@@ -283,15 +284,8 @@ getInventoryData(){
     this.http.get(this.inventoryJson).map(res => res.json()[item]).subscribe((data) => {
        data.toPromise();
        console.log(data);
-      //console.log("item"+item);
        this.nameItem = data["name"];
        console.log('getItem name'+this.nameItem);
-       /*
-      this.jpgItem = data[item]["jpg"];
-      this.nameItem = data[item]["name"];
-      this.descriptionItem = data[item]["description"];
-      this.buttonOn = data[item]["buttonOn"];
-      console.log('name '+this.nameItem);*/
     });
   }
 
@@ -309,5 +303,33 @@ getInventoryData(){
       this.track = data;
     });
   }
+
+  armor: any;
+  treasure: any;
+  bed: any;
+  wardrobe: any;
+  table: any;
+  bookshelves: any;
+  buyText: any;
+  closeText: any;
+  noMoneyText: any;
+  noMoneyButtonText: any;
+
+  //get the info for the alerts in the lair page
+  getLairData(){ 
+    this.http.get(this.gameJson).map(res => res.json()["lair"]).subscribe((data) => {
+      console.log(data);
+      this.buyText = data["buyText"];
+      this.closeText = data["closeText"];
+      this.noMoneyText = data["noMoneyText"];
+      this.noMoneyButtonText = data["noMoneyButtonText"];
+      this.armor = data["armor"];
+      this.treasure = data["treasure"];
+      this.bed = data["bed"];
+      this.wardrobe = data["wardrobe"];
+      this.table = data["table"];
+      this.bookshelves = data["bookshelves"];
+     });
+   }
 
 }

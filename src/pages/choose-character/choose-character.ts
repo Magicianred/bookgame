@@ -48,10 +48,10 @@ charReputation: any;
 
 setStats(){
   var resVal: any = 0;
-  this.storage.set('life', this.charLife);   //LIFE
-  this.storage.set('attack', this.charAttack);   // ATTACK 
-  this.storage.set('reputation', this.charReputation);   //REPUTATION 
-  this.storage.set('money', this.charMoney);   //MONEY
+  this.storage.set('life', this.gameData.charLife);   //LIFE
+  this.storage.set('attack', this.gameData.charAttack);   // ATTACK 
+  this.storage.set('reputation', this.gameData.charReputation);   //REPUTATION 
+  this.storage.set('money', this.gameData.charMoney);   //MONEY
   return resVal;
 }
 
